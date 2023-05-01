@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fronpage.apps.PizzalairConfig',
+    'frontpage.apps.PizzalairConfig',
 ]
 
 MIDDLEWARE = [
