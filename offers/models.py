@@ -7,4 +7,8 @@ class Offer(models.Model):
     price = models.FloatField(blank=True, null=True)
     description = models.CharField(max_length=255, blank=True, null=True)
     image = models.CharField(max_length=9999, blank=True, null=True)
+
+
+class NewOrder(models.Model):
+    order = models.ForeignKey(Offer, on_delete=models.CASCADE)
     items = models.ManyToManyField(Pizza)

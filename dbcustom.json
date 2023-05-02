@@ -135,5 +135,17 @@
       "price": 2000.0,
       "description": "Pay online and get a pizza off the menu for 2000kr"
     }
+  },
+  {
+    "model": "cart.country",
+    "fields": {
+      "name": "Iceland"
+    }
+  },
+  {
+    "model": "cart.country",
+    "fields": {
+      "name": "Denmark"
+    }
   }
 ]
