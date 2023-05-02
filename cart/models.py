@@ -5,7 +5,7 @@ from offers.models import Offer
 
 
 class Country(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
 
 
 class ContactInformation(models.Model):
@@ -29,5 +29,5 @@ class Order(models.Model):
     pizzas = models.ManyToManyField(Pizza)
     offers = models.ManyToManyField(Offer)
     price = models.FloatField()
-    credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.DO_NOTHING)
-    contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.DO_NOTHING)
+    credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
+    contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)

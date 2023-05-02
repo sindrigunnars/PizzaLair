@@ -6,13 +6,13 @@ class Topping(models.Model):
 
 
 class PizzaType(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
 
 
 class Pizza(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     price = models.FloatField()
-    type = models.ForeignKey(PizzaType, on_delete=models.CASCADE)
+    type = models.ForeignKey(PizzaType, on_delete=models.SET_NULL, null=True, blank=True)
     description = models.CharField(max_length=255, blank=True)
     toppings = models.ManyToManyField(Topping)
 
