@@ -1,0 +1,115 @@
+[
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "pepperoni"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "cheese"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "vegan cheese"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "sauce"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "ham"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "pineapple"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "bacon"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "peppers"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "onion"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "jalapeno"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "chili"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "fields": {
+      "name": "olives"
+    }
+  },
+  {
+    "model": "menu.pizzatype",
+    "fields": {
+      "name": "vegan"
+    }
+  },
+  {
+    "model": "menu.pizzatype",
+    "fields": {
+      "name": "vegetarian"
+    }
+  },
+  {
+    "model": "menu.pizzatype",
+    "fields": {
+      "name": "spicy"
+    }
+  },
+  {
+    "model": "menu.pizza",
+    "fields": {
+      "name": "Pepperoni Pizza",
+      "price": 2000.0,
+      "description": "",
+      "toppings": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "menu.pizza",
+    "fields": {
+      "name": "Margarita",
+      "price": 2000.0,
+      "description": "",
+      "toppings": [
+        2
+      ]
+    }
+  }
+]
