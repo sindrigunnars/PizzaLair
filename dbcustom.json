@@ -111,5 +111,29 @@
         2
       ]
     }
+  },
+  {
+    "model": "offers.offer",
+    "fields": {
+      "name": "2 for 1",
+      "price": 2000.0,
+      "description": "Order 2 pizzas, get the cheaper for free"
+    }
+  },
+  {
+    "model": "offers.offer",
+    "fields": {
+      "name": "Lunch offer",
+      "price": 2000.0,
+      "description": "Pizza and .5L drink for 2500"
+    }
+  },
+  {
+    "model": "offers.offer",
+    "fields": {
+      "name": "Internet offer",
+      "price": 2000.0,
+      "description": "Pay online and get a pizza off the menu for 2000kr"
+    }
   }
 ]
