@@ -27,6 +27,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "last_opened_file_path": "/Users/sindrigunnarsson/repos/verklegt-2/templates/userprofile",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)"
   },
@@ -36,6 +37,14 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/userprofile" />
+      <recent name="$PROJECT_DIR$/templates/offers" />
+      <recent name="$PROJECT_DIR$/templates/menu" />
+      <recent name="$PROJECT_DIR$/templates/frontpage" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="verklegt-2" type="Python.DjangoServer" factoryName="Django server">
       <module name="verklegt-2" />
