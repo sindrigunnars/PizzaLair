@@ -728,54 +728,61 @@
     "model": "menu.topping",
     "pk": 4,
     "fields": {
-      "name": "ham"
+      "name": "sauce"
     }
   },
   {
     "model": "menu.topping",
     "pk": 5,
     "fields": {
-      "name": "pineapple"
+      "name": "ham"
     }
   },
   {
     "model": "menu.topping",
     "pk": 6,
     "fields": {
-      "name": "bacon"
+      "name": "pineapple"
     }
   },
   {
     "model": "menu.topping",
     "pk": 7,
     "fields": {
-      "name": "peppers"
+      "name": "bacon"
     }
   },
   {
     "model": "menu.topping",
     "pk": 8,
     "fields": {
-      "name": "onion"
+      "name": "peppers"
     }
   },
   {
     "model": "menu.topping",
     "pk": 9,
     "fields": {
-      "name": "jalapeno"
+      "name": "onion"
     }
   },
   {
     "model": "menu.topping",
     "pk": 10,
     "fields": {
-      "name": "chili"
+      "name": "jalapeno"
     }
   },
   {
     "model": "menu.topping",
     "pk": 11,
+    "fields": {
+      "name": "chili"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 12,
     "fields": {
       "name": "olives"
     }
@@ -803,11 +810,11 @@
   },
   {
     "model": "menu.pizza",
-    "pk": 2,
+    "pk": 1,
     "fields": {
       "name": "Pepperoni Pizza",
       "price": 2000.0,
-      "type": 1,
+      "type": null,
       "description": "",
       "toppings": [
         1,
@@ -817,15 +824,51 @@
   },
   {
     "model": "menu.pizza",
-    "pk": 3,
+    "pk": 2,
     "fields": {
       "name": "Margarita",
       "price": 2000.0,
-      "type": 2,
+      "type": null,
       "description": "",
       "toppings": [
         2
       ]
+    }
+  },
+  {
+    "model": "offers.offer",
+    "pk": 1,
+    "fields": {
+      "name": "2 for 1",
+      "price": 2000.0,
+      "description": "Order 2 pizzas, get the cheaper for free",
+      "image": null,
+      "items": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "offers.offer",
+    "pk": 2,
+    "fields": {
+      "name": "Lunch offer",
+      "price": 2000.0,
+      "description": "Pizza and .5L drink for 2500",
+      "image": null,
+      "items": []
+    }
+  },
+  {
+    "model": "offers.offer",
+    "pk": 3,
+    "fields": {
+      "name": "Internet offer",
+      "price": 2000.0,
+      "description": "Pay online and get a pizza off the menu for 2000kr",
+      "image": null,
+      "items": []
     }
   }
 ]
