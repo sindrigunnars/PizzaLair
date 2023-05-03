@@ -117,7 +117,8 @@
     "fields": {
       "name": "2 for 1",
       "price": 2000.0,
-      "description": "Order 2 pizzas, get the cheaper for free"
+      "description": "Order 2 pizzas, get the cheaper for free",
+      "image": "https://mysnacks.shop/images/thumbs/0004394_pizza-margarita.jpeg"
     }
   },
   {
@@ -125,7 +126,8 @@
     "fields": {
       "name": "Lunch offer",
       "price": 2000.0,
-      "description": "Pizza and .5L drink for 2500"
+      "description": "Pizza and .5L drink for 2500",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRyP35ewXjn7Sw56sBT9_yBoFdBxn7WwFlw&usqp=CAU"
     }
   },
   {
@@ -146,6 +148,18 @@
     "model": "cart.country",
     "fields": {
       "name": "Denmark"
+    }
+  },
+    {
+    "model": "menu.pizzaimage",
+    "fields": {
+      "image": "https://mysnacks.shop/images/thumbs/0004394_pizza-margarita.jpeg"
+    }
+  },
+  {
+    "model": "menu.pizzaimage",
+    "fields": {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRyP35ewXjn7Sw56sBT9_yBoFdBxn7WwFlw&usqp=CAU"
     }
   }
 ]
