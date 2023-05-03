@@ -1,7 +1,7 @@
 from django.db import models
 from userprofile.models import User
 from menu.models import Pizza
-from offers.models import Offer
+from offers.models import NewOrder
 
 
 class Country(models.Model):
@@ -25,9 +25,19 @@ class PaymentInformation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
+class OrderPizza(models.Model):
+    item = models.ForeignKey(Pizza, null=True, on_delete=models.SET_NULL)
+    amount = models.PositiveIntegerField(null=True, blank=True)
+
+
+class OrderOffer(models.Model):
+    item = models.ForeignKey(NewOrder, null=True, on_delete=models.SET_NULL)
+    amount = models.PositiveIntegerField(null=True, blank=True)
+
+
 class Order(models.Model):
-    pizzas = models.ManyToManyField(Pizza)
-    offers = models.ManyToManyField(Offer)
-    price = models.FloatField()
+    pizzas = models.ManyToManyField(OrderPizza)
+    offers = models.ManyToManyField(OrderOffer)
+    price = models.FloatField(null=True, blank=True)
     credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
     contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)

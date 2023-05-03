@@ -9,6 +9,10 @@ class Offer(models.Model):
     image = models.CharField(max_length=9999, blank=True, null=True)
 
 
+class OrderItem(models.Model):
+    item = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+
+
 class NewOrder(models.Model):
     order = models.ForeignKey(Offer, on_delete=models.CASCADE)
-    items = models.ManyToManyField(Pizza)
+    items = models.ManyToManyField(OrderItem)
