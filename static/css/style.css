@@ -13,23 +13,22 @@
     text-align: center;
 }
 .content{
-    position: fixed;
-    top: 20%;
-    left: 2.5%;
-    right: 2.5%;
-    bottom: 20%;
+    display: flex;
+    /* position: fixed; */
+    /* top: 20%; */
+    /* left: 2.5%; */
+    /* right: 2.5%; */
+    /* bottom: 20%; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .square h1{
     font-size: 3em;
 }
-.search-bar-menu{
-    position: absolute;
-    top: auto;
-    width: 300px;
-}
+
 .pizza{
-    position: fixed;
-    top: 30%;
+    display: block;
 }
 
 .background-image {
@@ -51,6 +50,16 @@ body {
 
 html {
     height: 100%
+}
+
+footer {
+    background-color: white;
+    border-top: black;
+}
+
+header {
+    background-color: white;
+    border-bottom: black;
 }
 
 .row {
