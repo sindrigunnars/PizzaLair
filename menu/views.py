@@ -12,3 +12,18 @@ pizzas = [
 def index(request):
     context = {'pizzas': Pizza.objects.all()}
     return render(request, 'menu/index.html', context)
+
+
+def search(request):
+    search = request.GET.get('q')
+    if search:
+        pizzas = Pizza.objects.filter(name__icontains=search)
+    else:
+        pizzas = Pizza.objects.none()
+    return render(
+        request=request,
+        template_name='menu/index.html',
+        context={
+            'pizzas': pizzas
+        }
+    )
