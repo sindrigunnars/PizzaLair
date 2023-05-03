@@ -12,14 +12,27 @@
     justify-content: center;
     text-align: center;
 }
+.content{
+    position: fixed;
+    top: 20%;
+    left: 2.5%;
+    right: 2.5%;
+    bottom: 20%;
+}
 .square h1{
     font-size: 3em;
 }
-.pizza {
-    background-color: red;
-    border: solid 4px rgba(155, 155, 155, .5);
+.search-bar-menu{
+    position: absolute;
+    top: auto;
+    width: 300px;
 }
-.content {
+.pizza{
+    position: fixed;
+    top: 30%;
+}
+
+.background-image {
     width: 100%;
     height: 500px;
     background-image: url('../images/pizza.jpg');
