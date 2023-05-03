@@ -68,7 +68,7 @@ header {
 
 .login {
     display: block;
-    transform: translateY(-110px);
+    transform: translateY(-80px);
 }
 
 div#card {
