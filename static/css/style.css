@@ -65,3 +65,12 @@ header {
 .row {
     display: inline-flex;
 }
+
+.login {
+    display: block;
+    transform: translateY(-110px);
+}
+
+div#card {
+    height: 500px;
+}
