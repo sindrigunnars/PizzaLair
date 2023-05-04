@@ -19,6 +19,7 @@ def locations(request):
     }
     return render(request, 'frontpage/locations.html', context)
 
+
 def contact_us(request):
     context = {
         "information": Information.objects.get(pk=1)
