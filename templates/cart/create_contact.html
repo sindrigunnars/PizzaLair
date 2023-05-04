@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+    body {
+        text-align: center;
+    }
+    h5 {
+        color: white;
+        background-color: #28242c;
+        padding: 10px;
+        margin-right: 20%;
+        margin-left: 20%;
+        border-radius: 2%;
+    }
+    .form {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 20px;
+        border-radius: 2%;
+        background-color: #28242c;
+        color: white;
+    }
+    input[type="text"] {
+        opacity: .8;
+    }
+    select {
+        opacity: .8;
+    }
+    </style>
+    <h5>Please enter your contact information to continue with your order</h5>
+    <form class="form form-horizontal" action="{% url 'create_contact' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+        <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
+    </form>
+{% endblock %}
