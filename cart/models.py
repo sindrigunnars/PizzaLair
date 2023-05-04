@@ -38,6 +38,13 @@ class OrderOffer(models.Model):
 class Order(models.Model):
     pizzas = models.ManyToManyField(OrderPizza)
     offers = models.ManyToManyField(OrderOffer)
+    active = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)
     price = models.FloatField(null=True, blank=True)
     credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
     contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        if self.active:
+            return "True"
+        return "False"
