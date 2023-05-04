@@ -1,4 +1,22 @@
-{% extends 'base.html'%}
+{% extends 'clear_base.html'%}
 {% block content %}
-    <a href="{% url 'create_contact' %}"><button type="button">Checkout</button></a>
+    <div class="content">
+        <div class="pizza">
+            {% for item in orders.pizzas.all %}
+                <div class="pizza-item">
+                    <p>{{ item.item.name }}</p>
+                    <p>{{ item.amount }}</p>
+                    <!--<img src="{{item.item.images.all.0.image}}"-->
+                </div>
+            {% endfor %}
+            <br>
+            {% for item in orders.offers.all %}
+                <div class="pizza-item">
+                    <p>{{ item.item.order.name }}</p>
+                    <p>{{ item.amount }}</p>
+                    <!--<img src="{{item.item.order.image}}">-->
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

@@ -5,7 +5,7 @@ import config
 
 
 def index(request):
-    context = {'orders': Order.objects.all()}
+    context = {'orders': Order.objects.get(pk=1)}
     return render(request, 'cart/index.html', context)
 
 
