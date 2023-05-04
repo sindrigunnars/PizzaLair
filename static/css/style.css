@@ -28,7 +28,7 @@
 }
 
 .pizza{
-    display: block;
+    display: flex;
 }
 
 .background-image {
@@ -74,14 +74,13 @@ div#card {
     transform: translateY(-80px);
 }
 
-.pizza {
-    background-color: white;
-}
 
 .pizza-item {
     display: inline-block;
     margin: 30px;
     text-align: center;
+    background-color: white;
+    padding: 20px;
 }
 
 .pizza-item img {
