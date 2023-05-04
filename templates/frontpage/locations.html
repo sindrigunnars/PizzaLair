@@ -1,0 +1,13 @@
+{% extends 'clear_base.html' %}
+{% block content %}
+    <div class="content">
+        {% for location in information.locations.all %}
+            <div class="location">
+                <h4>{{ location.address }}</h4>
+                <p>{{ location.country.name }}</p>
+                <p>{{ location.email }}</p>
+                <p>{{ location.phone_number }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
