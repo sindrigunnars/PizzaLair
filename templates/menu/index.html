@@ -11,9 +11,13 @@
         </div><!-- /.col-lg-6 -->
         <div class="pizza">
             {% for pizza in pizzas %}
-                <h4>{{ pizza.name }}</h4>
-                <p>{{ pizza.price }} kr</p>
-                <img src="{{ pizza.images.all.0.image }}">
+                <div class="pizza-item">
+                    <img src="{{ pizza.images.all.0.image }}" style="display:inline-block">
+                    <div class="pizza-text-box">
+                        <h4>{{ pizza.name }}</h4>
+                        <p>{{ pizza.price }} kr</p>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
