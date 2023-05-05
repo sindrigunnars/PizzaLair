@@ -1,5 +1,5 @@
+from django.contrib.auth.models import User
 from django.db import models
-from userprofile.models import User
 from menu.models import Pizza
 from offers.models import NewOrder
 
@@ -17,7 +17,6 @@ class ContactInformation(models.Model):
     city = models.CharField(max_length=255)
     zip = models.IntegerField()
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class PaymentInformation(models.Model):
@@ -25,7 +24,6 @@ class PaymentInformation(models.Model):
     card_number = models.IntegerField()
     cvc = models.IntegerField()
     expiry = models.DateField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class OrderPizza(models.Model):
@@ -41,11 +39,11 @@ class OrderOffer(models.Model):
 class Order(models.Model):
     pizzas = models.ManyToManyField(OrderPizza)
     offers = models.ManyToManyField(OrderOffer)
-    active = models.BooleanField(default=False)
     completed = models.BooleanField(default=False)
     price = models.FloatField(null=True, blank=True)
     credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
     contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)
+    order_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         if self.active:
