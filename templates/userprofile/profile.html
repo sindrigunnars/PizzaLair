@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
+    <style>
+    .profile-image {
+        height: 2rem;
+        border-radius: 50%;
+    }
+    </style>
     <form class="form form-row" method="post">
     {% csrf_token %}
     {{ form }}
