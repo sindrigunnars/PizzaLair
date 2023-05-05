@@ -74,6 +74,33 @@ div#card {
     transform: translateY(-80px);
 }
 
+.offer {
+    display: flex;
+}
+
+.offer-item {
+    display: inline-block;
+    margin: 30px;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+}
+
+.offer img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: solid 2px rgba(0, 0, 0, .5);
+}
+
+.offer-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
 
 .pizza-item {
     display: inline-block;
