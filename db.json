@@ -291,72 +291,72 @@
     "model": "auth.permission",
     "pk": 33,
     "fields": {
-      "name": "Can add pizza",
+      "name": "Can add pizza image",
       "content_type": 9,
-      "codename": "add_pizza"
+      "codename": "add_pizzaimage"
     }
   },
   {
     "model": "auth.permission",
     "pk": 34,
     "fields": {
-      "name": "Can change pizza",
+      "name": "Can change pizza image",
       "content_type": 9,
-      "codename": "change_pizza"
+      "codename": "change_pizzaimage"
     }
   },
   {
     "model": "auth.permission",
     "pk": 35,
     "fields": {
-      "name": "Can delete pizza",
+      "name": "Can delete pizza image",
       "content_type": 9,
-      "codename": "delete_pizza"
+      "codename": "delete_pizzaimage"
     }
   },
   {
     "model": "auth.permission",
     "pk": 36,
     "fields": {
-      "name": "Can view pizza",
+      "name": "Can view pizza image",
       "content_type": 9,
-      "codename": "view_pizza"
+      "codename": "view_pizzaimage"
     }
   },
   {
     "model": "auth.permission",
     "pk": 37,
     "fields": {
-      "name": "Can add pizza image",
+      "name": "Can add pizza",
       "content_type": 10,
-      "codename": "add_pizzaimage"
+      "codename": "add_pizza"
     }
   },
   {
     "model": "auth.permission",
     "pk": 38,
     "fields": {
-      "name": "Can change pizza image",
+      "name": "Can change pizza",
       "content_type": 10,
-      "codename": "change_pizzaimage"
+      "codename": "change_pizza"
     }
   },
   {
     "model": "auth.permission",
     "pk": 39,
     "fields": {
-      "name": "Can delete pizza image",
+      "name": "Can delete pizza",
       "content_type": 10,
-      "codename": "delete_pizzaimage"
+      "codename": "delete_pizza"
     }
   },
   {
     "model": "auth.permission",
     "pk": 40,
     "fields": {
-      "name": "Can view pizza image",
+      "name": "Can view pizza",
       "content_type": 10,
-      "codename": "view_pizzaimage"
+      "codename": "view_pizza"
     }
   },
   {
@@ -399,180 +399,468 @@
     "model": "auth.permission",
     "pk": 45,
     "fields": {
-      "name": "Can add country",
+      "name": "Can add order item",
       "content_type": 12,
-      "codename": "add_country"
+      "codename": "add_orderitem"
     }
   },
   {
     "model": "auth.permission",
     "pk": 46,
     "fields": {
-      "name": "Can change country",
+      "name": "Can change order item",
       "content_type": 12,
-      "codename": "change_country"
+      "codename": "change_orderitem"
     }
   },
   {
     "model": "auth.permission",
     "pk": 47,
     "fields": {
-      "name": "Can delete country",
+      "name": "Can delete order item",
       "content_type": 12,
-      "codename": "delete_country"
+      "codename": "delete_orderitem"
     }
   },
   {
     "model": "auth.permission",
     "pk": 48,
     "fields": {
-      "name": "Can view country",
+      "name": "Can view order item",
       "content_type": 12,
-      "codename": "view_country"
+      "codename": "view_orderitem"
     }
   },
   {
     "model": "auth.permission",
     "pk": 49,
     "fields": {
-      "name": "Can add contact information",
+      "name": "Can add new order",
       "content_type": 13,
-      "codename": "add_contactinformation"
+      "codename": "add_neworder"
     }
   },
   {
     "model": "auth.permission",
     "pk": 50,
     "fields": {
-      "name": "Can change contact information",
+      "name": "Can change new order",
       "content_type": 13,
-      "codename": "change_contactinformation"
+      "codename": "change_neworder"
     }
   },
   {
     "model": "auth.permission",
     "pk": 51,
     "fields": {
-      "name": "Can delete contact information",
+      "name": "Can delete new order",
       "content_type": 13,
-      "codename": "delete_contactinformation"
+      "codename": "delete_neworder"
     }
   },
   {
     "model": "auth.permission",
     "pk": 52,
     "fields": {
-      "name": "Can view contact information",
+      "name": "Can view new order",
       "content_type": 13,
-      "codename": "view_contactinformation"
+      "codename": "view_neworder"
     }
   },
   {
     "model": "auth.permission",
     "pk": 53,
     "fields": {
-      "name": "Can add payment information",
+      "name": "Can add country",
       "content_type": 14,
-      "codename": "add_paymentinformation"
+      "codename": "add_country"
     }
   },
   {
     "model": "auth.permission",
     "pk": 54,
     "fields": {
-      "name": "Can change payment information",
+      "name": "Can change country",
       "content_type": 14,
-      "codename": "change_paymentinformation"
+      "codename": "change_country"
     }
   },
   {
     "model": "auth.permission",
     "pk": 55,
     "fields": {
-      "name": "Can delete payment information",
+      "name": "Can delete country",
       "content_type": 14,
-      "codename": "delete_paymentinformation"
+      "codename": "delete_country"
     }
   },
   {
     "model": "auth.permission",
     "pk": 56,
     "fields": {
-      "name": "Can view payment information",
+      "name": "Can view country",
       "content_type": 14,
-      "codename": "view_paymentinformation"
+      "codename": "view_country"
     }
   },
   {
     "model": "auth.permission",
     "pk": 57,
     "fields": {
-      "name": "Can add order",
+      "name": "Can add contact information",
       "content_type": 15,
-      "codename": "add_order"
+      "codename": "add_contactinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 58,
     "fields": {
-      "name": "Can change order",
+      "name": "Can change contact information",
       "content_type": 15,
-      "codename": "change_order"
+      "codename": "change_contactinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 59,
     "fields": {
-      "name": "Can delete order",
+      "name": "Can delete contact information",
       "content_type": 15,
-      "codename": "delete_order"
+      "codename": "delete_contactinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 60,
     "fields": {
-      "name": "Can view order",
+      "name": "Can view contact information",
       "content_type": 15,
-      "codename": "view_order"
+      "codename": "view_contactinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 61,
     "fields": {
-      "name": "Can add user",
+      "name": "Can add payment information",
       "content_type": 16,
-      "codename": "add_user"
+      "codename": "add_paymentinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 62,
     "fields": {
-      "name": "Can change user",
+      "name": "Can change payment information",
       "content_type": 16,
-      "codename": "change_user"
+      "codename": "change_paymentinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 63,
     "fields": {
-      "name": "Can delete user",
+      "name": "Can delete payment information",
       "content_type": 16,
-      "codename": "delete_user"
+      "codename": "delete_paymentinformation"
     }
   },
   {
     "model": "auth.permission",
     "pk": 64,
     "fields": {
-      "name": "Can view user",
+      "name": "Can view payment information",
       "content_type": 16,
+      "codename": "view_paymentinformation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add order",
+      "content_type": 17,
+      "codename": "add_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change order",
+      "content_type": 17,
+      "codename": "change_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete order",
+      "content_type": 17,
+      "codename": "delete_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view order",
+      "content_type": 17,
+      "codename": "view_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 18,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 18,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 18,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 18,
       "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add order pizza",
+      "content_type": 19,
+      "codename": "add_orderpizza"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change order pizza",
+      "content_type": 19,
+      "codename": "change_orderpizza"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete order pizza",
+      "content_type": 19,
+      "codename": "delete_orderpizza"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view order pizza",
+      "content_type": 19,
+      "codename": "view_orderpizza"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add order offer",
+      "content_type": 20,
+      "codename": "add_orderoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change order offer",
+      "content_type": 20,
+      "codename": "change_orderoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete order offer",
+      "content_type": 20,
+      "codename": "delete_orderoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view order offer",
+      "content_type": 20,
+      "codename": "view_orderoffer"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add information",
+      "content_type": 21,
+      "codename": "add_information"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change information",
+      "content_type": 21,
+      "codename": "change_information"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete information",
+      "content_type": 21,
+      "codename": "delete_information"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view information",
+      "content_type": 21,
+      "codename": "view_information"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can add location",
+      "content_type": 22,
+      "codename": "add_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can change location",
+      "content_type": 22,
+      "codename": "change_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can delete location",
+      "content_type": 22,
+      "codename": "delete_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view location",
+      "content_type": 22,
+      "codename": "view_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+      "name": "Can add user profile",
+      "content_type": 23,
+      "codename": "add_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+      "name": "Can change user profile",
+      "content_type": 23,
+      "codename": "change_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+      "name": "Can delete user profile",
+      "content_type": 23,
+      "codename": "delete_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+      "name": "Can view user profile",
+      "content_type": 23,
+      "codename": "view_userprofile"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$DXTGu7CkRuLY0PpUh38vrg$kALnpsuv2CMZ0r4nQp11zz97HeYrU9E9gTw93tRacvg=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "sindri",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-05-04T15:12:31.720Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$VnHoGQS2qcolSdWIqEurk1$KGq+AKM/w5kIefqkHwRJTOwJ8TvXIRM/KItf1DbHHe8=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jonas",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-05-04T15:15:53.141Z",
+      "groups": [],
+      "user_permissions": []
     }
   },
   {
@@ -644,7 +932,7 @@
     "pk": 9,
     "fields": {
       "app_label": "menu",
-      "model": "pizza"
+      "model": "pizzaimage"
     }
   },
   {
@@ -652,7 +940,7 @@
     "pk": 10,
     "fields": {
       "app_label": "menu",
-      "model": "pizzaimage"
+      "model": "pizza"
     }
   },
   {
@@ -667,16 +955,16 @@
     "model": "contenttypes.contenttype",
     "pk": 12,
     "fields": {
-      "app_label": "cart",
-      "model": "country"
+      "app_label": "offers",
+      "model": "orderitem"
     }
   },
   {
     "model": "contenttypes.contenttype",
     "pk": 13,
     "fields": {
-      "app_label": "cart",
-      "model": "contactinformation"
+      "app_label": "offers",
+      "model": "neworder"
     }
   },
   {
@@ -684,7 +972,7 @@
     "pk": 14,
     "fields": {
       "app_label": "cart",
-      "model": "paymentinformation"
+      "model": "country"
     }
   },
   {
@@ -692,15 +980,106 @@
     "pk": 15,
     "fields": {
       "app_label": "cart",
-      "model": "order"
+      "model": "contactinformation"
     }
   },
   {
     "model": "contenttypes.contenttype",
     "pk": 16,
     "fields": {
+      "app_label": "cart",
+      "model": "paymentinformation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+      "app_label": "cart",
+      "model": "order"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
       "app_label": "userprofile",
       "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+      "app_label": "cart",
+      "model": "orderpizza"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+      "app_label": "cart",
+      "model": "orderoffer"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+      "app_label": "frontpage",
+      "model": "information"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+      "app_label": "frontpage",
+      "model": "location"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+      "app_label": "userprofile",
+      "model": "userprofile"
+    }
+  },
+  {
+    "model": "frontpage.location",
+    "pk": 1,
+    "fields": {
+      "address": "Example st DK 1, Kobenhavn",
+      "country": 2,
+      "phone_number": 1237891,
+      "email": "pizzalairDK@pizzalair.com",
+      "opening_time": "11:00-23:00"
+    }
+  },
+  {
+    "model": "frontpage.location",
+    "pk": 2,
+    "fields": {
+      "address": "Example st IS 1, 101 Reykjavík",
+      "country": 1,
+      "phone_number": 1239876,
+      "email": "pizzalairIS@pizzalair.com",
+      "opening_time": "11:00-23:00"
+    }
+  },
+  {
+    "model": "frontpage.information",
+    "pk": 1,
+    "fields": {
+      "about_us": "Pizza Lair was created as a side prodject by three students from the University of Reykjavík",
+      "phone_number": 1234567,
+      "email": "pizzalair@pizzalair.com",
+      "locations": [
+        1,
+        2
+      ]
     }
   },
   {
@@ -809,6 +1188,20 @@
     }
   },
   {
+    "model": "menu.pizzaimage",
+    "pk": 1,
+    "fields": {
+      "image": "https://mysnacks.shop/images/thumbs/0004394_pizza-margarita.jpeg"
+    }
+  },
+  {
+    "model": "menu.pizzaimage",
+    "pk": 2,
+    "fields": {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRyP35ewXjn7Sw56sBT9_yBoFdBxn7WwFlw&usqp=CAU"
+    }
+  },
+  {
     "model": "menu.pizza",
     "pk": 1,
     "fields": {
@@ -818,6 +1211,9 @@
       "description": "",
       "toppings": [
         1,
+        2
+      ],
+      "images": [
         2
       ]
     }
@@ -832,6 +1228,9 @@
       "description": "",
       "toppings": [
         2
+      ],
+      "images": [
+        1
       ]
     }
   },
@@ -842,11 +1241,7 @@
       "name": "2 for 1",
       "price": 2000.0,
       "description": "Order 2 pizzas, get the cheaper for free",
-      "image": null,
-      "items": [
-        1,
-        2
-      ]
+      "image": "https://mysnacks.shop/images/thumbs/0004394_pizza-margarita.jpeg"
     }
   },
   {
@@ -856,8 +1251,7 @@
       "name": "Lunch offer",
       "price": 2000.0,
       "description": "Pizza and .5L drink for 2500",
-      "image": null,
-      "items": []
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRyP35ewXjn7Sw56sBT9_yBoFdBxn7WwFlw&usqp=CAU"
     }
   },
   {
@@ -867,8 +1261,115 @@
       "name": "Internet offer",
       "price": 2000.0,
       "description": "Pay online and get a pizza off the menu for 2000kr",
-      "image": null,
-      "items": []
+      "image": null
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 1,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 2,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 3,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 4,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.neworder",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "items": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "offers.neworder",
+    "pk": 2,
+    "fields": {
+      "order": 1,
+      "items": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "cart.country",
+    "pk": 1,
+    "fields": {
+      "name": "Iceland"
+    }
+  },
+  {
+    "model": "cart.country",
+    "pk": 2,
+    "fields": {
+      "name": "Denmark"
+    }
+  },
+  {
+    "model": "cart.contactinformation",
+    "pk": 4,
+    "fields": {
+      "name": "test",
+      "address": "test",
+      "city": "test",
+      "zip": 1,
+      "country": 1
+    }
+  },
+  {
+    "model": "cart.orderpizza",
+    "pk": 1,
+    "fields": {
+      "item": 1,
+      "amount": 2
+    }
+  },
+  {
+    "model": "cart.orderoffer",
+    "pk": 1,
+    "fields": {
+      "item": 2,
+      "amount": 1
+    }
+  },
+  {
+    "model": "cart.order",
+    "pk": 1,
+    "fields": {
+      "completed": false,
+      "price": null,
+      "credit_card": null,
+      "contact_information": null,
+      "order_user": null,
+      "pizzas": [
+        1
+      ],
+      "offers": [
+        1
+      ]
     }
   }
 ]

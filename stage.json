@@ -1,0 +1,327 @@
+[
+  {
+    "model": "frontpage.location",
+    "pk": 1,
+    "fields": {
+      "address": "Example st DK 1, Kobenhavn",
+      "country": 2,
+      "phone_number": 1237891,
+      "email": "pizzalairDK@pizzalair.com",
+      "opening_time": "11:00-23:00"
+    }
+  },
+  {
+    "model": "frontpage.location",
+    "pk": 2,
+    "fields": {
+      "address": "Example st IS 1, 101 Reykjavík",
+      "country": 1,
+      "phone_number": 1239876,
+      "email": "pizzalairIS@pizzalair.com",
+      "opening_time": "11:00-23:00"
+    }
+  },
+  {
+    "model": "frontpage.information",
+    "pk": 1,
+    "fields": {
+      "about_us": "Pizza Lair was created as a side prodject by three students from the University of Reykjavík",
+      "phone_number": 1234567,
+      "email": "pizzalair@pizzalair.com",
+      "locations": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 1,
+    "fields": {
+      "name": "pepperoni"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 2,
+    "fields": {
+      "name": "cheese"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 3,
+    "fields": {
+      "name": "vegan cheese"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 4,
+    "fields": {
+      "name": "sauce"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 5,
+    "fields": {
+      "name": "ham"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 6,
+    "fields": {
+      "name": "pineapple"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 7,
+    "fields": {
+      "name": "bacon"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 8,
+    "fields": {
+      "name": "peppers"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 9,
+    "fields": {
+      "name": "onion"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 10,
+    "fields": {
+      "name": "jalapeno"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 11,
+    "fields": {
+      "name": "chili"
+    }
+  },
+  {
+    "model": "menu.topping",
+    "pk": 12,
+    "fields": {
+      "name": "olives"
+    }
+  },
+  {
+    "model": "menu.pizzatype",
+    "pk": 1,
+    "fields": {
+      "name": "vegan"
+    }
+  },
+  {
+    "model": "menu.pizzatype",
+    "pk": 2,
+    "fields": {
+      "name": "vegetarian"
+    }
+  },
+  {
+    "model": "menu.pizzatype",
+    "pk": 3,
+    "fields": {
+      "name": "spicy"
+    }
+  },
+  {
+    "model": "menu.pizzaimage",
+    "pk": 1,
+    "fields": {
+      "image": "https://mysnacks.shop/images/thumbs/0004394_pizza-margarita.jpeg"
+    }
+  },
+  {
+    "model": "menu.pizzaimage",
+    "pk": 2,
+    "fields": {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRyP35ewXjn7Sw56sBT9_yBoFdBxn7WwFlw&usqp=CAU"
+    }
+  },
+  {
+    "model": "menu.pizza",
+    "pk": 1,
+    "fields": {
+      "name": "Pepperoni Pizza",
+      "price": 2000.0,
+      "type": null,
+      "description": "",
+      "toppings": [
+        1,
+        2
+      ],
+      "images": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "menu.pizza",
+    "pk": 2,
+    "fields": {
+      "name": "Margarita",
+      "price": 2000.0,
+      "type": null,
+      "description": "",
+      "toppings": [
+        2
+      ],
+      "images": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "offers.offer",
+    "pk": 1,
+    "fields": {
+      "name": "2 for 1",
+      "price": 2000.0,
+      "description": "Order 2 pizzas, get the cheaper for free",
+      "image": "https://mysnacks.shop/images/thumbs/0004394_pizza-margarita.jpeg"
+    }
+  },
+  {
+    "model": "offers.offer",
+    "pk": 2,
+    "fields": {
+      "name": "Lunch offer",
+      "price": 2000.0,
+      "description": "Pizza and .5L drink for 2500",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRyP35ewXjn7Sw56sBT9_yBoFdBxn7WwFlw&usqp=CAU"
+    }
+  },
+  {
+    "model": "offers.offer",
+    "pk": 3,
+    "fields": {
+      "name": "Internet offer",
+      "price": 2000.0,
+      "description": "Pay online and get a pizza off the menu for 2000kr",
+      "image": null
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 1,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 2,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 3,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.orderitem",
+    "pk": 4,
+    "fields": {
+      "item": 1
+    }
+  },
+  {
+    "model": "offers.neworder",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "items": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "offers.neworder",
+    "pk": 2,
+    "fields": {
+      "order": 1,
+      "items": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "cart.country",
+    "pk": 1,
+    "fields": {
+      "name": "Iceland"
+    }
+  },
+  {
+    "model": "cart.country",
+    "pk": 2,
+    "fields": {
+      "name": "Denmark"
+    }
+  },
+  {
+    "model": "cart.contactinformation",
+    "pk": 4,
+    "fields": {
+      "name": "test",
+      "address": "test",
+      "city": "test",
+      "zip": 1,
+      "country": 1
+    }
+  },
+  {
+    "model": "cart.orderpizza",
+    "pk": 1,
+    "fields": {
+      "item": 1,
+      "amount": 2
+    }
+  },
+  {
+    "model": "cart.orderoffer",
+    "pk": 1,
+    "fields": {
+      "item": 2,
+      "amount": 1
+    }
+  },
+  {
+    "model": "cart.order",
+    "pk": 1,
+    "fields": {
+      "completed": false,
+      "price": null,
+      "credit_card": null,
+      "contact_information": null,
+      "order_user": null,
+      "pizzas": [
+        1
+      ],
+      "offers": [
+        1
+      ]
+    }
+  }
+]
