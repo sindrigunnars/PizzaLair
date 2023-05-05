@@ -1,7 +1,16 @@
-<div class="well pizza">
-    <a href="/pizza/{{ pizza.id }}">
-        <img class="pizza-img" src="{{ pizza.images.all.0.image }}" />
-        <h4>{{ pizza.name }}</h4>
-        <p>{{ pizza.description }}</p>
-    </a>
-</div>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="view-pizza">
+        <button class="back-button" onclick="window.history.back()">&larr;</button>
+        <div class="pizza-details">
+            <h4>{{ pizza.name }}</h4>
+            <p>{{ pizza.toppings }}</p>
+            <p>{{ pizza.description }}</p>
+        </div>
+        <div class="price-and-image">
+            <img class="pizza-img" src="{{ pizza.images.all.0.image }}" />
+            <p class="pizza-price">{{ pizza.price }} kr</p>
+            <button class="add-cart-button" onclick="">Add to cart</button>
+        </div>
+    </div>
+{% endblock %}

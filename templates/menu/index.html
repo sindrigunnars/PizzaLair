@@ -3,11 +3,18 @@
     <div class="content">
         <div class="search-bar-menu">
             <div class="search">
-
                 <form action="{% url 'search' %}" class="form">
                     <input name="q" value="{{ request.GET.q }}" placeholder="Search...">
                     </p>
                 </form>
+            </div>
+            <div class="sort-by">
+                <select id="sort-by-select">
+                    <option value="?sort=name_asc">Name (A-Z)</option>
+                    <option value="?sort=name_desc">Name (Z-A)</option>
+                    <option value="?sort=price_asc">Price (low to high)</option>
+                    <option value="?sort=price_desc">Price (high to low)</option>
+                </select>
             </div>
         </div><!-- /.col-lg-6 -->
         <div class="pizza">
