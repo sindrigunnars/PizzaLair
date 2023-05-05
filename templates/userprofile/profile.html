@@ -1,8 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form class="form form-row" method="post">
-    {% csrf_token %}
-    {{ form }}
+    <style>
+    .form-group {
+        display: flex;
+        color: #f8f9fa;
+        background-color: #28242c;
+        margin-top: 50px;
+        margin-right: 20%;
+        margin-left: 20%;
+        border-radius: 2%;
+    }
+
+    .form {
+        margin: 30px;
+        justify-content: end;
+        width: 90%;
+    }
+
+    .form-group .btn {
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        margin-bottom: 10px;
+        margin-top: 5px;
+        opacity: .8;
+    }
+    .profile-img {
+        height: 15rem;
+        padding: 50px;
+        border-radius: 50%;
+    }
+    .img-container {
+        background-color: #f8f9fa;
+        border-radius: 2%;
+    }
+    </style>
+
+    <div class="form-group">
+        <div class="img-container">
+            <img src="{{ user.userprofile.image }}" class="profile-image profile-img" alt="profile image">
+            <p>{{ user.userprofile.screen_name }}</p>
+        </div>
+        <form class="form form-row" method="post">
+        {% csrf_token %}
+        {{ form }}
         <input type="submit" class="btn btn-primary" value="Update"/>
-    </form>
+        </form>
+    </div>
 {% endblock %}
