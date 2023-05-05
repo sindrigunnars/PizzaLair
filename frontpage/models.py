@@ -7,6 +7,7 @@ class Location(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     phone_number = models.PositiveIntegerField()
     email = models.EmailField(max_length=255, unique=True)
+    opening_time = models.CharField(max_length=255, default="11:00-23:00")
 
 
 class Information(models.Model):
