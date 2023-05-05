@@ -4,7 +4,7 @@
         <button class="back-button" onclick="window.history.back()">&larr;</button>
         <div class="pizza-details">
             <h4>{{ pizza.name }}</h4>
-            <p>{{ pizza.toppings }}</p>
+            <p>{{ pizza.toppings.all|join:', ' }}</p>
             <p>{{ pizza.description }}</p>
         </div>
         <div class="price-and-image">
