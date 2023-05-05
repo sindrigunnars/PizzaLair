@@ -126,10 +126,12 @@ div#card {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 100px;
+    margin: 100px auto;
     text-align: center;
     background-color: white;
     padding: 20px;
+    width: 800px;
+    height: 400px;
 }
 
 .back-button {
