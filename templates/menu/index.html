@@ -17,21 +17,10 @@
                     <div class="pizza-text-box">
                         <h4>{{ pizza.name }}</h4>
                         <p>{{ pizza.price }} kr</p>
-                        <a href="{{ pizza.id }}/">
-                            <button data-details-target="#details-{{ pizza.id }}">View details</button>
+                        <a href="/menu/{{ pizza.id }}">
+                            <button>View details</button>
                         </a>
-                        <!--<button data-details-target="#details-{{ pizza.id }}">View details</button>
-                        <div class="details" id="details-{{ pizza.id }}">
-                            <div class="details-header">
-                                <div class="title">{{ pizza.name }}</div>
-                                <button data-close-button class="close-button">&times;</button>
-                            </div>
-                            <div class="details-body">
-                                testing testing testing
-                            </div>
-                        </div>
-                        <div id="overlay"></div>
-                        -->
+
                     </div>
                 </div>
             {% endfor %}

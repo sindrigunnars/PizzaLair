@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ pizza.name }}</h1>
+    <p>{{ pizza.description }}</p>
+    <p>{{ pizza.price }} kr</p>
+    {% for pizza_image in pizza.images.all.0.image %}
+        <img src="{{ pizza.images.all.0.image }}" class="pizza-img">
+    {% endfor %}
+{% endblock %}
