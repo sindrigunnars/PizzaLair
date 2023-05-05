@@ -11,12 +11,12 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'menu-index' %}">Menu</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authorized %}
-                    <li><a href="{% url 'userprofile-index' %}"><button type="button" class="btn btn-default navbar-btn">Profile</button></a></li> <!--after login displays screen name and img-->
-                    <li><a href="{% url 'cart-index' %}"><button type="button" class="btn btn-default navbar-btn">Order</button></a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Order</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
                 {% else %}
-                    <li><a href="{% url 'userprofile-index' %}"><button type="button" class="btn btn-default navbar-btn">Login</button></a></li> <!--after login displays screen name and img-->
-                    <li><a href="{% url 'register' %}"><button type="button" class="btn btn-default navbar-btn">Register</button></a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> <!--after login displays screen name and img-->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
                 {% endif %}
             </ul>
         </div>
