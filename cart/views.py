@@ -3,7 +3,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from cart.forms.payment_form import PaymentCreateForm
 from cart.models import Order
 from cart.forms.contact_form import ContactCreateForm
-import config
 
 
 def index(request):
