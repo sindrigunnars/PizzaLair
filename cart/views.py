@@ -7,8 +7,10 @@ from cart.forms.contact_form import ContactCreateForm
 
 def index(request):
     # context = {'orders': Order.objects.get(pk=1)}
-
-    context = {'orders': Order.objects.get(order_user=request.user)}
+    try:
+        context = {'orders': Order.objects.get(order_user=request.user, completed=False)}
+    except Order.DoesNotExist:
+        context = {'orders': Order.objects.create(order_user=request.user)}
     return render(request, 'cart/index.html', context)
 
 

@@ -44,8 +44,3 @@ class Order(models.Model):
     credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
     contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)
     order_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-
-    def __str__(self):
-        if self.active:
-            return "True"
-        return "False"
