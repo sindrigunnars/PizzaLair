@@ -3,11 +3,8 @@
     <div class="content">
         <div class="search-bar-menu">
             <div class="search">
-
-                <form action="{% url 'search' %}" class="form">
-                    <input name="q" value="{{ request.GET.q }}" placeholder="Search...">
-                    </p>
-                </form>
+                <input type="search" class="form-control" id="search-box">
+                <button type="button" id="search-btn">Search</button>
             </div>
         </div><!-- /.col-lg-6 -->
         <div class="pizza">
