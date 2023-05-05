@@ -177,3 +177,8 @@ div#card {
     border: black solid;
     padding: 10px;
 }
+
+.profile-image {
+    height: 2rem;
+    border-radius: 50%;
+}
