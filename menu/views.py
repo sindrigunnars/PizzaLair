@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from cart.models import Order, OrderPizza
 from menu.models import Pizza
+
 
 # Create your views here.
 # pizzas = [
@@ -28,6 +30,26 @@ def get_pizza_by_id(request, id):
     return render(request, 'menu/single_pizza.html', {
         'pizza': get_object_or_404(Pizza, pk=id)
     })
+
+
+def add_menu_to_cart(request):
+    try:
+        pizza_id = request.POST['pizzaId']
+        cart_order = Order.objects.get(order_user=request.user, completed=False)
+        for pizza in cart_order.pizzas.all():
+            print(pizza.amount, pizza.item_id, pizza_id, int(pizza_id) == int(pizza.item_id))
+            if int(pizza.item_id) == int(pizza_id):
+                pizza.amount += 1
+                pizza.save()
+                return redirect('menu-index')
+        cart_order.pizzas.add(OrderPizza.objects.create(item=Pizza.objects.get(pk=pizza_id)))
+        cart_order.save()
+        return redirect('menu-index')
+    except Order.DoesNotExist:
+        print('Úps')
+    except TypeError:
+        return redirect('login')
+    return redirect('menu-index')
 
 """
 def search(request):
