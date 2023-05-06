@@ -46,7 +46,9 @@ def add_menu_to_cart(request):
         cart_order.save()
         return redirect('menu-index')
     except Order.DoesNotExist:
-        print('Úps')
+        new_order = Order.objects.create(order_user=request.user)
+        new_order.pizzas.add(OrderPizza.objects.create(item=Pizza.objects.get(pk=pizza_id)))
+        new_order.save()
     except TypeError:
         return redirect('login')
     return redirect('menu-index')
