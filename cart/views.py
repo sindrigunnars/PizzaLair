@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
 from cart.forms.payment_form import PaymentCreateForm
@@ -6,7 +7,18 @@ from cart.forms.contact_form import ContactCreateForm
 
 
 def index(request):
-    # context = {'orders': Order.objects.get(pk=1)}
+    if 'add-pizza' in request.GET:
+        add_id = request.GET['add-pizza']
+        cust_order = Order.objects.get(order_user=request.user, completed=False).pizzas.all().get(pk=add_id)
+        cust_order.amount += 1
+        cust_order.save()
+        return JsonResponse({'data': cust_order.amount})
+    if 'minus-pizza' in request.GET:
+        add_id = request.GET['minus-pizza']
+        cust_order = Order.objects.get(order_user=request.user, completed=False).pizzas.all().get(pk=add_id)
+        cust_order.amount -= 1
+        cust_order.save()
+        return JsonResponse({'data': cust_order.amount})
     try:
         context = {'orders': Order.objects.get(order_user=request.user, completed=False)}
     except Order.DoesNotExist:
