@@ -3,17 +3,21 @@
     <div class="content">
         <div class="pizza">
             {% for item in orders.pizzas.all %}
-                <div class="pizza-item">
+                <div class="pizza-item" id="{{ item.id }}">
                     <p>{{ item.item.name }}</p>
-                    <p>{{ item.amount }}</p>
+                    <p class="amount">{{ item.amount }}</p>
+                    <button type="button" class="minus-button">-</button>
+                    <button type="button" class="add-button">+</button>
                     <!--<img src="{{item.item.images.all.0.image}}"-->
                 </div>
             {% endfor %}
             <br>
             {% for item in orders.offers.all %}
-                <div class="pizza-item">
+                <div class="pizza-item" id="{{ item.id }}">
                     <p>{{ item.item.order.name }}</p>
                     <p>{{ item.amount }}</p>
+                    <button type="button" class="minus-button">-</button>
+                    <button type="button" class="add-button">+</button>
                     <!--<img src="{{item.item.order.image}}">-->
                 </div>
             {% endfor %}
