@@ -23,7 +23,10 @@ def create_contact(request):
     if request.method == 'POST':
         form = ContactCreateForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            current_order = Order.objects.get(order_user=request.user, completed=False)
+            contact = form.save()
+            current_order.contact_information = contact
+            current_order.save()
             return redirect('create_payment')
     else:
         form = ContactCreateForm()
@@ -36,7 +39,10 @@ def create_payment(request):
     if request.method == 'POST':
         form = PaymentCreateForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            current_order = Order.objects.get(order_user=request.user, completed=False)
+            payment = form.save()
+            current_order.contact_information = payment
+            current_order.save()
             return redirect('cart-index')  # change later to cart-review
     else:
         form = PaymentCreateForm()
