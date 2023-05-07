@@ -14,11 +14,28 @@ def index(request):
         cust_order.save()
         return JsonResponse({'data': cust_order.amount})
     if 'minus-pizza' in request.GET:
-        add_id = request.GET['minus-pizza']
-        cust_order = Order.objects.get(order_user=request.user, completed=False).pizzas.all().get(pk=add_id)
+        minus_id = request.GET['minus-pizza']
+        cust_order = Order.objects.get(order_user=request.user, completed=False).pizzas.all().get(pk=minus_id)
         cust_order.amount -= 1
         cust_order.save()
         return JsonResponse({'data': cust_order.amount})
+    if 'add-offer' in request.GET:
+        add_id = request.GET['add-offer']
+        cust_order = Order.objects.get(order_user=request.user, completed=False).offers.all().get(pk=add_id)
+        cust_order.amount += 1
+        cust_order.save()
+        return JsonResponse({'data': cust_order.amount})
+    if 'minus-offer' in request.GET:
+        minus_id = request.GET['minus-offer']
+        cust_order = Order.objects.get(order_user=request.user, completed=False).offers.all().get(pk=minus_id)
+        cust_order.amount -= 1
+        cust_order.save()
+        return JsonResponse({'data': cust_order.amount})
+    if 'clear-all' in request.GET:
+        cust_order = Order.objects.get(order_user=request.user, completed=False)
+        cust_order.delete()
+        Order.objects.create(order_user=request.user)
+        return JsonResponse({'data': None})
     try:
         context = {'orders': Order.objects.get(order_user=request.user, completed=False)}
     except Order.DoesNotExist:
