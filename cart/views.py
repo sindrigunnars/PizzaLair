@@ -4,21 +4,28 @@ from django.shortcuts import render, get_object_or_404, redirect
 from cart.forms.payment_form import PaymentCreateForm
 from cart.models import Order
 from cart.forms.contact_form import ContactCreateForm
+from menu.models import Pizza
 
 
 def index(request):
     if 'add-pizza' in request.GET:
         add_id = request.GET['add-pizza']
-        cust_order = Order.objects.get(order_user=request.user, completed=False).pizzas.all().get(pk=add_id)
-        cust_order.amount += 1
+        cust_order = Order.objects.get(order_user=request.user, completed=False)
+        order_item = cust_order.pizzas.all().get(pk=add_id)
+        order_item.amount += 1
+        cust_order.price += Pizza.objects.get(pk=order_item.item_id).price
+        order_item.save()
         cust_order.save()
-        return JsonResponse({'data': cust_order.amount})
+        return JsonResponse({'data': order_item.amount})
     if 'minus-pizza' in request.GET:
         minus_id = request.GET['minus-pizza']
-        cust_order = Order.objects.get(order_user=request.user, completed=False).pizzas.all().get(pk=minus_id)
-        cust_order.amount -= 1
+        cust_order = Order.objects.get(order_user=request.user, completed=False)
+        order_item = cust_order.pizzas.all().get(pk=minus_id)
+        order_item.amount -= 1
+        cust_order.price -= Pizza.objects.get(pk=order_item.item_id).price
+        order_item.save()
         cust_order.save()
-        return JsonResponse({'data': cust_order.amount})
+        return JsonResponse({'data': order_item.amount})
     if 'add-offer' in request.GET:
         add_id = request.GET['add-offer']
         cust_order = Order.objects.get(order_user=request.user, completed=False).offers.all().get(pk=add_id)

@@ -7,8 +7,8 @@
                 <div class="pizza-item" id="{{ item.id }}">
                     <p>{{ item.item.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
-                    <button type="button" class="minus-button">-</button>
-                    <button type="button" class="add-button">+</button>
+                    <button type="button" class="minus-button-pizza">-</button>
+                    <button type="button" class="add-button-pizza">+</button>
                     <!--<img src="{{item.item.images.all.0.image}}"-->
                 </div>
             {% endfor %}
@@ -17,8 +17,8 @@
                 <div class="offer-item" id="{{ item.id }}">
                     <p>{{ item.item.order.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
-                    <button type="button" class="minus-button">-</button>
-                    <button type="button" class="add-button">+</button>
+                    <button type="button" class="minus-button-offer">-</button>
+                    <button type="button" class="add-button-offer">+</button>
                     <!--<img src="{{item.item.order.image}}">-->
                 </div>
             {% endfor %}

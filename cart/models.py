@@ -40,7 +40,7 @@ class Order(models.Model):
     pizzas = models.ManyToManyField(OrderPizza)
     offers = models.ManyToManyField(OrderOffer)
     completed = models.BooleanField(default=False)
-    price = models.FloatField(null=True, blank=True)
+    price = models.FloatField(default=0)
     credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
     contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)
     order_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

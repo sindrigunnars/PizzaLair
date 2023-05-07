@@ -30,7 +30,7 @@ $(document).ready( function () {
 
 
 $(document).ready( function () {
-    $('.add-button').on('click', function (e) {
+    $('.add-button-pizza').on('click', function (e) {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
@@ -50,7 +50,7 @@ $(document).ready( function () {
 
 
 $(document).ready( function () {
-    $('.minus-button').on('click', function (e) {
+    $('.minus-button-pizza').on('click', function (e) {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
@@ -70,7 +70,7 @@ $(document).ready( function () {
 
 
 $(document).ready( function () {
-    $('.add-button').on('click', function (e) {
+    $('.add-button-offer').on('click', function (e) {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
@@ -90,7 +90,7 @@ $(document).ready( function () {
 
 
 $(document).ready( function () {
-    $('.minus-button').on('click', function (e) {
+    $('.minus-button-offer').on('click', function (e) {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
