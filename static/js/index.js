@@ -34,7 +34,6 @@ $(document).ready( function () {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
-        console.log("hey");
         $.ajax({
             url: '/cart?add-pizza=' + pizza_id,
             type: 'GET',
@@ -55,13 +54,68 @@ $(document).ready( function () {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
-        console.log("hey");
         $.ajax({
             url: '/cart?minus-pizza=' + pizza_id,
             type: 'GET',
             success: function (resp) {
                 const new_amount = resp.data;
                 elem.text(new_amount);
+            },
+            errors: function (xhr, status, error) {
+                console.log(error)
+            }
+        })
+    })
+});
+
+
+$(document).ready( function () {
+    $('.add-button').on('click', function (e) {
+        e.preventDefault();
+        const pizza_id = $(this).parent().attr('id');
+        let elem = $(this).siblings('.amount');
+        $.ajax({
+            url: '/cart?add-offer=' + pizza_id,
+            type: 'GET',
+            success: function (resp) {
+                const new_amount = resp.data;
+                elem.text(new_amount);
+            },
+            errors: function (xhr, status, error) {
+                console.log(error)
+            }
+        })
+    })
+});
+
+
+$(document).ready( function () {
+    $('.minus-button').on('click', function (e) {
+        e.preventDefault();
+        const pizza_id = $(this).parent().attr('id');
+        let elem = $(this).siblings('.amount');
+        $.ajax({
+            url: '/cart?minus-offer=' + pizza_id,
+            type: 'GET',
+            success: function (resp) {
+                const new_amount = resp.data;
+                elem.text(new_amount);
+            },
+            errors: function (xhr, status, error) {
+                console.log(error)
+            }
+        })
+    })
+});
+
+$(document).ready( function () {
+    $('.clear-all').on('click', function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/cart?clear-all',
+            type: 'GET',
+            success: function (resp) {
+                $('.pizza').empty();
             },
             errors: function (xhr, status, error) {
                 console.log(error)

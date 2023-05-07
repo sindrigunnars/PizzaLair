@@ -1,6 +1,7 @@
 {% extends 'clear_base.html'%}
 {% block content %}
     <div class="content">
+        <button type="button" class="clear-all">X</button>
         <div class="pizza">
             {% for item in orders.pizzas.all %}
                 <div class="pizza-item" id="{{ item.id }}">
@@ -13,9 +14,9 @@
             {% endfor %}
             <br>
             {% for item in orders.offers.all %}
-                <div class="pizza-item" id="{{ item.id }}">
+                <div class="offer-item" id="{{ item.id }}">
                     <p>{{ item.item.order.name }}</p>
-                    <p>{{ item.amount }}</p>
+                    <p class="amount">{{ item.amount }}</p>
                     <button type="button" class="minus-button">-</button>
                     <button type="button" class="add-button">+</button>
                     <!--<img src="{{item.item.order.image}}">-->
