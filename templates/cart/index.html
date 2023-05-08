@@ -21,8 +21,11 @@
                 <div class="offer-item" id="{{ item.id }}">
                     <p>{{ item.item.order.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
-                    <button type="button" class="minus-button-offer">-</button>
-                    <button type="button" class="add-button-offer">+</button>
+                    {%  if item.amount < 1 %}
+                        <button type="button" class="minus-button-offer" disabled>-</button>
+                    {% else %}
+                        <button type="button" class="minus-button-offer">-</button>
+                    {% endif %}
                     <!--<img src="{{item.item.order.image}}">-->
                 </div>
             {% endfor %}
