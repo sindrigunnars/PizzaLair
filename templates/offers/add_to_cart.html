@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add-offer">
+        <button class="back-button" onclick="window.history.back()">&larr;</button>
+        <div class="offer-name-and-desc">
+            <h4>{{ offer.name }}</h4>
+            <p>{{ offer.description }}</p>
+        </div>
+        <div class="offer-img-and-price">
+            <img class="offer-img" src="{{ offer.image }}" />
+            <p>{{ offer.price }} kr</p>
+        </div>
+    </div>
+{% endblock %}
