@@ -22,7 +22,7 @@
                     <p>{{ item.item.order.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
                     {%  if item.amount < 1 %}
-                        <button type="button" class="minus-button-offer" disabled>-</button>
+                        <button type="button" class="minus-button-offer" disabled="True">-</button>
                     {% else %}
                         <button type="button" class="minus-button-offer">-</button>
                     {% endif %}
@@ -30,6 +30,6 @@
                 </div>
             {% endfor %}
         </div>
-    <a href="{% url 'create_contact' %}"><button type="button">Checkout</button></a>
+        <a href="{% url 'create_contact' %}"><button type="button">Checkout</button></a>
     </div>
 {% endblock %}
