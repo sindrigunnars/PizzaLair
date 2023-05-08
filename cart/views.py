@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
-
 from cart.forms.payment_form import PaymentCreateForm
 from cart.models import Order
 from cart.forms.contact_form import ContactCreateForm
@@ -48,11 +47,6 @@ def index(request):
     except Order.DoesNotExist:
         context = {'orders': Order.objects.create(order_user=request.user)}
     return render(request, 'cart/index.html', context)
-
-
-def order(request):
-    context = {}
-    return render(request, 'cart/order.html', context)
 
 
 def create_contact(request):
