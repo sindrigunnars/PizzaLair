@@ -7,7 +7,15 @@
             <p>{{ offer.description }}</p>
         </div>
         <div class="pizza-select">
-            <select id="pizza-select-drop">
+            <option value="">Pizza 1</option>
+            <select id="pizza-select-drop1">
+                {% for pizza in pizzas %}
+                    <option value="{{ pizza.id }}">{{ pizza.name }}</option>
+                {% endfor %}
+            </select>
+            <p></p>
+            <option value="">Pizza 2</option>
+            <select id="pizza-select-drop2">
                 {% for pizza in pizzas %}
                     <option value="{{ pizza.id }}">{{ pizza.name }}</option>
                 {% endfor %}
