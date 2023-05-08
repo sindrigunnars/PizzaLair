@@ -140,6 +140,43 @@ $(document).ready( function () {
     })
 });
 
+$(document).ready( function () {
+    $('.remove-button-pizza').on('click', function (e) {
+        e.preventDefault();
+        const remove_id = $(this).parent().attr('id');
+        let elem = $(this).parent();
+        $.ajax({
+            url: '/cart?remove-pizza=' + remove_id,
+            type: 'GET',
+            success: function (resp) {
+                elem.remove();
+            },
+            errors: function (xhr, status, error) {
+                console.log(error)
+            }
+        })
+    })
+});
+
+
+$(document).ready( function () {
+    $('.remove-button-offer').on('click', function (e) {
+        e.preventDefault();
+        const remove_id = $(this).parent().attr('id');
+        let elem = $(this).parent();
+        $.ajax({
+            url: '/cart?remove-offer=' + remove_id,
+            type: 'GET',
+            success: function (resp) {
+                elem.remove();
+            },
+            errors: function (xhr, status, error) {
+                console.log(error)
+            }
+        })
+    })
+});
+
 
 /*
 $(document).ready( function () {
