@@ -177,6 +177,91 @@ $(document).ready( function () {
     })
 });
 
+$(document).ready( function () {
+    $('.sort-by-select').change( function (e) {
+        e.preventDefault();
+        const elem = $(this).children(":selected").attr('id');
+        if (elem === 'name') {
+            $.ajax({
+                url: '/menu?sort_name',
+                type: 'GET',
+                success: function (resp) {
+                    const newHtml = resp.data.map(d => {
+                    return `<div class="pizza-item">
+                            <img src="${d.image}" style="display:inline-block" alt="">
+                                <div class="pizza-text-box">
+                                    <h4>${d.name}</h4>
+                                    <p>${d.price} kr</p>
+                                    <a href="/menu/${d.id}">
+                                        <button>View details</button>
+                                    </a>
+                                </div>
+                            </div>`
+                });
+                $('.pizza').html(newHtml.join(''));
+                },
+                errors: function (xhr, status, error) {
+                    console.log(error)
+                }
+            })
+        }
+        else if (elem === 'price') {
+            $.ajax({
+                url: '/menu?sort_price',
+                type: 'GET',
+                success: function (resp) {
+                    const newHtml = resp.data.map(d => {
+                    return `<div class="pizza-item">
+                            <img src="${d.image}" style="display:inline-block" alt="">
+                                <div class="pizza-text-box">
+                                    <h4>${d.name}</h4>
+                                    <p>${d.price} kr</p>
+                                    <a href="/menu/${d.id}">
+                                        <button>View details</button>
+                                    </a>
+                                </div>
+                            </div>`
+                });
+                $('.pizza').html(newHtml.join(''));
+                },
+                errors: function (xhr, status, error) {
+                    console.log(error)
+                }
+            })
+        }
+    })
+});
+
+
+$(document).ready( function () {
+    $('.filter-by-select').change( function (e) {
+        e.preventDefault();
+        const elem = $(this).children(":selected").attr('id');
+        $.ajax({
+            url: '/menu?filter=' + elem,
+            type: 'GET',
+            success: function (resp) {
+                const newHtml = resp.data.map(d => {
+                return `<div class="pizza-item">
+                        <img src="${d.image}" style="display:inline-block" alt="">
+                            <div class="pizza-text-box">
+                                <h4>${d.name}</h4>
+                                <p>${d.price} kr</p>
+                                <a href="/menu/${d.id}">
+                                    <button>View details</button>
+                                </a>
+                            </div>
+                        </div>`
+            });
+            $('.pizza').html(newHtml.join(''));
+            },
+            errors: function (xhr, status, error) {
+                console.log(error)
+            }
+        })
+    })
+});
+
 
 /*
 $(document).ready( function () {

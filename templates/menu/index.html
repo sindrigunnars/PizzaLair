@@ -7,11 +7,18 @@
                 <button type="button" id="search-btn">Search</button>
             </div>
             <div class="sort-by">
-                <select id="sort-by-select">
-                    <option value="?sort=name_asc">Name (A-Z)</option>
-                    <option value="?sort=name_desc">Name (Z-A)</option>
-                    <option value="?sort=price_asc">Price (low to high)</option>
-                    <option value="?sort=price_desc">Price (high to low)</option>
+                <select class="sort-by-select">
+                    <option value="" disabled selected>Order by</option>
+                    <option id="name">Name (A-Z)</option>
+                    <option id="price">Price (low to high)</option>
+                </select>
+            </div>
+            <div class="filter-by">
+                <select class="filter-by-select">
+                    <option value="" disabled selected>Select type</option>
+                    {% for type in types %}
+                        <option id="{{ type.name }}">{{ type.name|capfirst }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div><!-- /.col-lg-6 -->

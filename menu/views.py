@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from cart.models import Order, OrderPizza
-from menu.models import Pizza
+from menu.models import Pizza, PizzaType
 
 
 # Create your views here.
@@ -22,7 +22,35 @@ def index(request):
             'image': x.images.all()[0].image
         } for x in list(Pizza.objects.filter(name__icontains=search_filter))]
         return JsonResponse({'data': pizzas})
-    context = {'pizzas': Pizza.objects.all().order_by('name')}
+    if 'sort_name' in request.GET:
+        pizzas = [{
+            'id': x.pk,
+            'name': x.name,
+            'price': x.price,
+            'image': x.images.all()[0].image
+        } for x in list(Pizza.objects.all().order_by('name'))]
+        return JsonResponse({'data': pizzas})
+    if 'sort_price' in request.GET:
+        pizzas = [{
+            'id': x.pk,
+            'name': x.name,
+            'price': x.price,
+            'image': x.images.all()[0].image
+        } for x in list(Pizza.objects.all().order_by('-price'))]
+        return JsonResponse({'data': pizzas})
+    if 'filter' in request.GET:
+        type_name = request.GET['filter']
+        pizzas = [{
+            'id': x.pk,
+            'name': x.name,
+            'price': x.price,
+            'image': x.images.all()[0].image
+        } for x in list(Pizza.objects.filter(type=PizzaType.objects.get(name=type_name).id))]
+        return JsonResponse({'data': pizzas})
+    context = {
+        'pizzas': Pizza.objects.all().order_by('name'),
+        'types': PizzaType.objects.all()
+    }
     return render(request, 'menu/index.html', context)
 
 
