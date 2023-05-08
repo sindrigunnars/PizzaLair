@@ -41,6 +41,8 @@ def index(request):
         remove_id = request.GET['remove-pizza']
         cust_order = Order.objects.get(order_user=request.user, completed=False)
         order_item = cust_order.pizzas.all().get(pk=remove_id)
+        cust_order.price -= order_item.amount * Pizza.objects.get(pk=order_item.item_id).price
+        cust_order.save()
         order_item.delete()
         return JsonResponse({'data': None})
     if 'remove-offer' in request.GET:
