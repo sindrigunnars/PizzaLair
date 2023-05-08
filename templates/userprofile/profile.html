@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <style>
-    .form-group {
+    .profile-group {
         display: flex;
         color: #f8f9fa;
         background-color: #28242c;
@@ -26,13 +26,15 @@
         margin-top: 5px;
         opacity: .8;
     }
-    .profile-img {
+    #profile-pic {
         height: 15rem;
         padding: 50px;
         border-radius: 50%;
+        z-index: 2;
     }
     .img-container {
         border-radius: 2% 0 0 2%;
+        min-width: fit-content;
         /* fallback for old browsers */
         background: #f8f9fa;
 
@@ -47,18 +49,32 @@
         color: #28242c;
         text-align: center;
         font-weight: bold;
+        padding: 10px;
     }
     </style>
 
-    <div class="form-group">
+    <div class="profile-group">
         <div class="img-container">
-            <img src="{{ user.userprofile.image }}" class="profile-image profile-img" alt="profile image">
-            <h5 class="screen-name">{{ user.userprofile.screen_name }}</h5>
+            {% if user.userprofile.image %}
+                <h5 class="screen-name">{{ user.userprofile.screen_name }}</h5>
+                <img src="{{ user.userprofile.image }}" class="profile-image" alt="profile image" id="profile-pic">
+            {% else %}
+                <h5 class="screen-name">{{ user.userprofile.screen_name }}</h5>
+            {% endif %}
         </div>
         <form class="form form-row" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="btn btn-primary" value="Update"/>
+        <input type="submit" class="btn btn-primary" value="Update" id="profile-btn"/>
         </form>
     </div>
+
+<!--
+<script>
+    document.getElementById("profile-pic").addEventListener("onchange", () => {
+        let myInput = document.getElementById("profile-pic");
+        myInput.hidden = !(myInput && myInput.value);
+    }, false);
+</script>
+-->
 {% endblock %}
