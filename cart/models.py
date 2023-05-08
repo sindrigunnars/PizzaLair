@@ -34,7 +34,7 @@ class OrderPizza(models.Model):
 
 class OrderOffer(models.Model):
     item = models.ForeignKey(NewOrder, null=True, on_delete=models.SET_NULL)
-    amount = models.PositiveIntegerField(null=True, blank=True)
+    amount = models.PositiveIntegerField(default=1)
 
 
 class Order(models.Model):

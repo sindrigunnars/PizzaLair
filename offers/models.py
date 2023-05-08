@@ -15,4 +15,5 @@ class OrderItem(models.Model):
 
 class NewOrder(models.Model):
     order = models.ForeignKey(Offer, on_delete=models.CASCADE)
+    price = models.FloatField(blank=True, null=True)
     items = models.ManyToManyField(OrderItem)

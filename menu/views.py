@@ -72,7 +72,6 @@ def add_menu_to_cart(request):
         cart_order.pizzas.add(OrderPizza.objects.create(item=Pizza.objects.get(pk=pizza_id)))
         cart_order.price += Pizza.objects.get(pk=pizza_id).price
         cart_order.save()
-        return redirect('menu-index')
     except Order.DoesNotExist:
         new_order = Order.objects.create(order_user=request.user)
         new_order.pizzas.add(OrderPizza.objects.create(item=Pizza.objects.get(pk=pizza_id)))
