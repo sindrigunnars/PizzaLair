@@ -7,8 +7,8 @@
                     <img src="{{ offer.image }}" style="display:inline-block">
                     <div class="offer-text-box">
                         <h4>{{ offer.name }}</h4>
-                        <a href="{% url 'Home Page' %}/">
-                            <button data-details-target="#details-{{ pizza.id }}">Add to cart</button>
+                        <a href="/offers/{{ offer.id }}">
+                            <button>Add to cart</button>
                         </a>
                     </div>
                 </div>
