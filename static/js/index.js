@@ -34,11 +34,15 @@ $(document).ready( function () {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
+        let minus_btn = $(this).siblings('.minus-button-pizza');
         $.ajax({
             url: '/cart?add-pizza=' + pizza_id,
             type: 'GET',
             success: function (resp) {
                 const new_amount = resp.data;
+                if (new_amount > 0) {
+                     minus_btn.prop('disabled',false)
+                }
                 elem.text(new_amount);
             },
             errors: function (xhr, status, error) {
@@ -54,11 +58,15 @@ $(document).ready( function () {
         e.preventDefault();
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
+        let btn = $(this);
         $.ajax({
             url: '/cart?minus-pizza=' + pizza_id,
             type: 'GET',
             success: function (resp) {
                 const new_amount = resp.data;
+                if (new_amount < 1) {
+                     btn.prop('disabled',true)
+                }
                 elem.text(new_amount);
             },
             errors: function (xhr, status, error) {

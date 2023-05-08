@@ -7,7 +7,11 @@
                 <div class="pizza-item" id="{{ item.id }}">
                     <p>{{ item.item.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
-                    <button type="button" class="minus-button-pizza">-</button>
+                    {%  if item.amount < 1 %}
+                        <button type="button" class="minus-button-pizza" disabled>-</button>
+                    {% else %}
+                        <button type="button" class="minus-button-pizza">-</button>
+                    {% endif %}
                     <button type="button" class="add-button-pizza">+</button>
                     <!--<img src="{{item.item.images.all.0.image}}"-->
                 </div>
