@@ -11,8 +11,12 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'menu-index' %}">Menu</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
+                {% if user.is_authenticated and user.userprofile.image %}
                     <img src="{{ user.userprofile.image }}" class="profile-image" alt="profile image">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Order</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
+                {% elif user.is_authenticated and not user.userprofile.image %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Order</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
