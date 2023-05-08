@@ -6,6 +6,13 @@
             <h4>{{ offer.name }}</h4>
             <p>{{ offer.description }}</p>
         </div>
+        <div class="pizza-select">
+            <select id="pizza-select-drop">
+                {% for pizza in pizzas %}
+                    <option value="{{ pizza.id }}">{{ pizza.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
         <div class="offer-img-and-price">
             <img class="offer-img" src="{{ offer.image }}" />
             <p>{{ offer.price }} kr</p>
