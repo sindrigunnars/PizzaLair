@@ -14,6 +14,7 @@ class Country(models.Model):
 class ContactInformation(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
+    house_number = models.PositiveIntegerField(default=0)
     city = models.CharField(max_length=255)
     zip = models.IntegerField()
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
