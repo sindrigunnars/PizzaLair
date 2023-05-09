@@ -27,16 +27,22 @@ def index(request):
         return JsonResponse({'data': order_item.amount})
     if 'add-offer' in request.GET:
         add_id = request.GET['add-offer']
-        cust_order = Order.objects.get(order_user=request.user, completed=False).offers.all().get(pk=add_id)
-        cust_order.amount += 1
+        cust_order = Order.objects.get(order_user=request.user, completed=False)
+        order_item = cust_order.offers.all().get(pk=add_id)
+        order_item.amount += 1
+        cust_order.price += order_item.item.price
+        order_item.save()
         cust_order.save()
-        return JsonResponse({'data': cust_order.amount})
+        return JsonResponse({'data': order_item.amount})
     if 'minus-offer' in request.GET:
         minus_id = request.GET['minus-offer']
-        cust_order = Order.objects.get(order_user=request.user, completed=False).offers.all().get(pk=minus_id)
-        cust_order.amount -= 1
+        cust_order = Order.objects.get(order_user=request.user, completed=False)
+        order_item = cust_order.offers.all().get(pk=minus_id)
+        order_item.amount -= 1
+        cust_order.price -= order_item.item.price
+        order_item.save()
         cust_order.save()
-        return JsonResponse({'data': cust_order.amount})
+        return JsonResponse({'data': order_item.amount})
     if 'remove-pizza' in request.GET:
         remove_id = request.GET['remove-pizza']
         cust_order = Order.objects.get(order_user=request.user, completed=False)
@@ -49,6 +55,8 @@ def index(request):
         remove_id = request.GET['remove-offer']
         cust_order = Order.objects.get(order_user=request.user, completed=False)
         order_item = cust_order.offers.all().get(pk=remove_id)
+        cust_order.price -= order_item.amount * order_item.item.price
+        cust_order.save()
         order_item.delete()
         return JsonResponse({'data': None})
     if 'clear-all' in request.GET:

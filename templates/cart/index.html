@@ -33,6 +33,10 @@
                 </div>
             {% endfor %}
         </div>
-        <a href="{% url 'create_contact' %}"><button type="button">Checkout</button></a>
+        {% if orders.price != 0 %}
+            <a href="{% url 'create_contact' %}"><button type="button">Checkout</button></a>
+        {% else %}
+            <a href="{% url 'create_contact' %}"><button type="button" disabled="True">Checkout</button></a>
+        {% endif %}
     </div>
 {% endblock %}
