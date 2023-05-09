@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from cart.forms.payment_form import PaymentCreateForm
-from cart.models import Order
+from cart.models import Order, PaymentInformation
 from cart.forms.contact_form import ContactCreateForm
 from menu.models import Pizza
 
@@ -103,5 +103,21 @@ def create_payment(request):
     })
 
 
+'''def payment(request):
+    context = {
+        'information': PaymentInformation.objects.all()
+    }'''
+
+
 def review(request):
-    return render(request, 'cart/review.html')
+    context = {
+        'order': Order.objects.get(order_user=request.user, completed=False),
+    }
+    return render(request, 'cart/review.html', context)
+
+
+def payment(request):
+    context = {
+        'cc': PaymentInformation.objects.all()
+    }
+    return render(request, 'cart/review.html', context)
