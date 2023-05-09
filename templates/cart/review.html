@@ -28,7 +28,7 @@
                     <div class="offer-item" id="{{ item.id }}">
                         <p>{{ item.item.order.name }}</p>
                         {% for pizza in order.offers.all.item.items.all %}
-                            <p>{{ item.item.items.item.name }}</p>
+                            <p>{{ pizza.item.name }}</p>
                         {% endfor %}
                         <p class="amount">{{ item.amount }}</p>
                         <img src="{{item.item.order.image}}" alt="Offer image"/>
