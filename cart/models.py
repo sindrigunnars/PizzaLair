@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator
 from django.db import models
 from menu.models import Pizza
 from offers.models import NewOrder
@@ -22,8 +23,8 @@ class ContactInformation(models.Model):
 
 class PaymentInformation(models.Model):
     name = models.CharField(max_length=255)
-    card_number = models.IntegerField()
-    cvc = models.IntegerField()
+    card_number = models.IntegerField(validators=[MaxValueValidator(9999999999999999)])
+    cvc = models.IntegerField(validators=[MaxValueValidator(999)])
     expiry = models.DateField()
 
 
