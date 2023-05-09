@@ -131,7 +131,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/userprofile/login'
 LOGIN_REDIRECT_URL = '/userprofile/profile'
-
-DATE_FORMAT = 'm/y'
-DATE_INPUT_FORMATS = 'm/y'
-USE_L10N = False
