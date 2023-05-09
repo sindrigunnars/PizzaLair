@@ -105,21 +105,8 @@ def create_payment(request):
     })
 
 
-'''def payment(request):
-    context = {
-        'information': PaymentInformation.objects.all()
-    }'''
-
-
 def review(request):
     context = {
         'order': Order.objects.get(order_user=request.user, completed=False),
-    }
-    return render(request, 'cart/review.html', context)
-
-
-def payment(request):
-    context = {
-        'cc': PaymentInformation.objects.all()
     }
     return render(request, 'cart/review.html', context)
