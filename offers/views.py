@@ -17,14 +17,30 @@ def index(request):
 
 
 def get_offer_by_id(request, id):
-    return render(request, 'offers/add_to_cart.html', {
-        'offer': get_object_or_404(Offer, pk=id),
-        'pizzas': Pizza.objects.all()
-    })
-
+    offer = get_object_or_404(Offer, pk=id)
+    if offer.id == 1:
+        return render(request, 'offers/two_for_one.html', {
+            'offer': offer,
+            'pizzas': Pizza.objects.all()
+        })
+    elif offer.id == 3:
+        return render(request, 'offers/internet_offer.html', {
+            'offer': offer,
+            'pizzas': Pizza.objects.all()
+        })
+    elif offer.id == 2:
+        return render(request, 'offers/lunch_offer.html', {
+            'offer': offer,
+            'pizzas': Pizza.objects.all()
+        })
+    else:
+        return render(request, 'offers/index.html', {
+            'offer': offer,
+            'pizzas': Pizza.objects.all()
+        })
 
 def get_pizza_by_id(request, id):
-    return render(request, 'offers/add_to_cart.html', {
+    return render(request, 'offers/two_for_one.html', {
         'pizza': get_object_or_404(Pizza, pk=id)
     })
 
