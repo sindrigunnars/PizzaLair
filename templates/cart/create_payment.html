@@ -1,41 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-    <style>
-    body {
-        text-align: center;
-    }
-    h5 {
-        color: white;
-        background-color: #28242c;
-        padding: 10px;
-        margin-right: 25%;
-        margin-left: 25%;
-        border-radius: 2%;
-    }
-    .form {
-        width: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
-        padding: 20px;
-        border-radius: 2%;
-        background-color: #28242c;
-        color: white;
-    }
-    input[type="text"] {
-        opacity: .8;
-    }
-    input[type="number"] {
-        opacity: .8;
-    }
-    select {
-        opacity: .8;
-    }
-    </style>
-
-    <h5>Please enter your payment information</h5>
-    <form class="form form-horizontal" action="{% url 'create_payment' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-        <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
-    </form>
+    <div class="contact-form-container">
+        <h5>Please enter your payment information</h5>
+        <div class="contact-form">
+            <form action="{% url 'create_payment' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+                <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
+            </form>
+            {% if order.credit_card %}
+                <a href="{% url 'review' %}"><button>Continue without editing</button></a>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

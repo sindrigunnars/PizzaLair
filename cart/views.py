@@ -94,13 +94,14 @@ def create_payment(request):
         if form.is_valid():
             current_order = Order.objects.get(order_user=request.user, completed=False)
             payment = form.save()
-            current_order.payment_information = payment
+            current_order.credit_card = payment
             current_order.save()
             return redirect('review')
     else:
         form = PaymentCreateForm()
     return render(request, 'cart/create_payment.html', {
-        'form': form
+        'form': form,
+        'order': Order.objects.get(order_user=request.user, completed=False)
     })
 
 
