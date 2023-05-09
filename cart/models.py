@@ -48,3 +48,9 @@ class Order(models.Model):
     credit_card = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
     contact_information = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)
     order_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+
+class Review(models.Model):
+    order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
+    payment_info = models.ForeignKey(PaymentInformation, null=True, on_delete=models.SET_NULL)
+    contact_info = models.ForeignKey(ContactInformation, null=True, on_delete=models.SET_NULL)

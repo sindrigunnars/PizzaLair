@@ -12,10 +12,18 @@ class PaymentCreateForm(ModelForm):
         exclude = ['id', 'user']
         widgets = {
             'name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'card_number': widgets.NumberInput(attrs={'class': 'form-control'}),
-            'cvc': widgets.NumberInput(attrs={'class': 'form-control'}),
-            'expiry': widgets.DateInput(attrs={'class': 'form-control'}, format='%m/%y'),
+            'card_number': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'xxxxxxxxxxxxxxxx'}),
+            'cvc': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'xxx'}),
+            'expiry': widgets.DateInput(attrs={'class': 'form-control'}),
         }
+
+    def clean_card_number(self):
+        cc_number = self.cleaned_data.get('card_number')
+        if len(str(cc_number)) != 16:
+            raise forms.ValidationError('Card number must be a 16 digit number written consecutively\n'
+                                        '(for testing purposes use zeros)')
+        return cc_number
+
 '''
     def clean(self):
         super(PaymentCreateForm, self).clean()
@@ -23,22 +31,17 @@ class PaymentCreateForm(ModelForm):
         card_number = self.cleaned_data.get('card_number')
         cvc = self.cleaned_data.get('cvc')
 
-        if len(card_number) != 16 and type(card_number) != int:
+        if len(str(card_number)) != 16:
             raise forms.ValidationError('Card number must be a 16 digit number')
 
-        if len(cvc) != 3 and type(cvc) != int:
+        if len(str(cvc)) != 3:
             raise forms.ValidationError('CVC must be a 3 digit number')
 
     def clean_expiry(self):
-        now = datetime.now()
         date = self.cleaned_data.get('expiry')
-        month = date.month
-        year = date.year
-        if (now.month < month < 13) and (year >= now.year):
-            return date
-        elif (0 < month < now.month) and (year > now.year):
-            return date
-        else:
+        
+        if date < datetime.now():
             raise forms.ValidationError('Your card is expired {}'.format(date))
-
+        
+        return date
 '''

@@ -95,9 +95,13 @@ def create_payment(request):
             payment = form.save()
             current_order.payment_information = payment
             current_order.save()
-            return redirect('cart-index')  # change later to cart-review
+            return redirect('review')
     else:
         form = PaymentCreateForm()
     return render(request, 'cart/create_payment.html', {
         'form': form
     })
+
+
+def review(request):
+    return render(request, 'cart/review.html')
