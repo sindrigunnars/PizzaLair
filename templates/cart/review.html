@@ -2,22 +2,25 @@
 {% block content %}
     <div class="order">
         <div class="pizza">
-            {% for item in orders.pizzas.all %}
+            {% for item in order.pizzas.all %}
                 <div class="pizza-item" id="{{ item.id }}">
                     <p>{{ item.item.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
             {% endfor %}
         </div>
+        <div class="payment">
+            <div>{{ order.credit_card.name }}</div>
+            <div>{{ order.credit_card.card_number }}</div>
+            <div>{{ order.credit_card.cvc }}</div>
+            <div>{{ order.credit_card.expiry }}</div>
+        </div>
+        <div class="contact">
+            <div>{{ order.contact_information.name }}</div>
+        </div>
+        <div class="offer">
+            <div>{{ order.offers }}</div>
+        </div>
     </div>
-    <div class="payment">
-        <div>{{ Order.credit_card }}</div>
-        <div>{{ order.credit_card.card_number }}</div>
-        <div>{{ order.credit_card.cvc }}</div>
-        <div>{{ order.credit_card.expiry }}</div>
 
-    </div>
-    <div class="contact">
-        <div>{{ order.contact_information.name }}</div>
-    </div>
 
 {% endblock %}
