@@ -35,15 +35,20 @@ $(document).ready( function () {
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
         let minus_btn = $(this).siblings('.minus-button-pizza');
+        let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?add-pizza=' + pizza_id,
             type: 'GET',
             success: function (resp) {
-                const new_amount = resp.data;
+                const [new_amount, new_price] = resp.data;
                 if (new_amount > 0) {
                      minus_btn.prop('disabled',false)
                 }
+                if (new_price > 0) {
+                     checkout_btn.prop('disabled',false)
+                }
                 elem.text(new_amount);
+
             },
             errors: function (xhr, status, error) {
                 console.log(error)
@@ -59,14 +64,19 @@ $(document).ready( function () {
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
         let btn = $(this);
+        let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?minus-pizza=' + pizza_id,
             type: 'GET',
             success: function (resp) {
-                const new_amount = resp.data;
+                const [new_amount, new_price] = resp.data;
                 if (new_amount < 1) {
                      btn.prop('disabled',true)
                 }
+                if (new_price < 1) {
+                     checkout_btn.prop('disabled', true)
+                }
+
                 elem.text(new_amount);
             },
             errors: function (xhr, status, error) {
@@ -83,13 +93,17 @@ $(document).ready( function () {
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
         let minus_btn = $(this).siblings('.minus-button-offer');
+        let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?add-offer=' + pizza_id,
             type: 'GET',
             success: function (resp) {
-                const new_amount = resp.data;
+                const [new_amount, new_price] = resp.data;
                 if (new_amount > 0) {
                      minus_btn.prop('disabled',false)
+                }
+                if (new_price > 0) {
+                     checkout_btn.prop('disabled', false)
                 }
                 elem.text(new_amount);
             },
@@ -107,13 +121,17 @@ $(document).ready( function () {
         const pizza_id = $(this).parent().attr('id');
         let elem = $(this).siblings('.amount');
         let btn = $(this);
+        let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?minus-offer=' + pizza_id,
             type: 'GET',
             success: function (resp) {
-                const new_amount = resp.data;
+                const [new_amount, new_price] = resp.data;
                 if (new_amount < 1) {
                      btn.prop('disabled',true)
+                }
+                if (new_price < 1) {
+                     checkout_btn.prop('disabled', true)
                 }
                 elem.text(new_amount);
             },
@@ -145,11 +163,16 @@ $(document).ready( function () {
         e.preventDefault();
         const remove_id = $(this).parent().attr('id');
         let elem = $(this).parent();
+        let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?remove-pizza=' + remove_id,
             type: 'GET',
             success: function (resp) {
+                const new_price = resp.data;
                 elem.remove();
+                if (new_price < 1) {
+                     checkout_btn.prop('disabled', true)
+                }
             },
             errors: function (xhr, status, error) {
                 console.log(error)
@@ -164,11 +187,16 @@ $(document).ready( function () {
         e.preventDefault();
         const remove_id = $(this).parent().attr('id');
         let elem = $(this).parent();
+        let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?remove-offer=' + remove_id,
             type: 'GET',
             success: function (resp) {
+                const new_price = resp.data;
                 elem.remove();
+                if (new_price < 1) {
+                     checkout_btn.prop('disabled', true)
+                }
             },
             errors: function (xhr, status, error) {
                 console.log(error)

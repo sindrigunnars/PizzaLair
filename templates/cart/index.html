@@ -34,9 +34,9 @@
             {% endfor %}
         </div>
         {% if orders.price != 0 %}
-            <a href="{% url 'create_contact' %}"><button type="button">Checkout</button></a>
+            <a href="{% url 'create_contact' %}"><button type="button" class="checkout">Checkout</button></a>
         {% else %}
-            <a href="{% url 'create_contact' %}"><button type="button" disabled="True">Checkout</button></a>
+            <a href="{% url 'create_contact' %}"><button type="button" class="checkout" disabled="True">Checkout</button></a>
         {% endif %}
     </div>
 {% endblock %}
