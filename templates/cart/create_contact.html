@@ -30,11 +30,39 @@
     select {
         opacity: .8;
     }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: center;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #28242c;
+        color: aliceblue;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .contact-form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+        margin-bottom: 90px;
+        margin-top: 20px;
+    }
     </style>
-    <h5>Please enter your contact information to continue with your order</h5>
-    <form class="form form-horizontal" action="{% url 'create_contact' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-        <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
-    </form>
+    <div class="contact-form-container">
+        <h5>Please enter your contact information to continue with your order</h5>
+        <div class="contact-form">
+            <form action="{% url 'create_contact' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+                <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
+            </form>
+            {% if order.contact_information %}
+                    <a href="{% url 'create_payment' %}"><button>Continue without editing</button></a>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

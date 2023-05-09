@@ -47,7 +47,7 @@ html {
 }
 
 footer {
-    background-color: white;
+    background-color: #28242c;
     border-top: black;
 }
 
@@ -57,7 +57,8 @@ header {
 }
 
 .row {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .login {
@@ -220,4 +221,35 @@ div#card {
     height: 250px;
     object-fit: cover;
     border: solid 2px rgba(0, 0, 0, 0.5);
+}
+
+.col-lg-3 {
+    display: inline-flex;
+}
+
+.foot-btn {
+    display: block;
+}
+
+.p-4 {
+    padding: 1rem!important;;
+}
+
+.link {
+    font-size: medium;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.text-uppercase {
+    display: block;
+    padding: 0px;
+    font-size: medium;
+}
+
+.btn-outline-light {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }

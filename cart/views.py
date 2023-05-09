@@ -83,7 +83,8 @@ def create_contact(request):
     else:
         form = ContactCreateForm()
     return render(request, 'cart/create_contact.html', {
-        'form': form
+        'form': form,
+        'order': Order.objects.get(order_user=request.user, completed=False)
     })
 
 
