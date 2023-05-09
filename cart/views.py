@@ -85,7 +85,7 @@ def create_payment(request):
         if form.is_valid():
             current_order = Order.objects.get(order_user=request.user, completed=False)
             payment = form.save()
-            current_order.contact_information = payment
+            current_order.payment_information = payment
             current_order.save()
             return redirect('cart-index')  # change later to cart-review
     else:

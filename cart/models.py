@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
-from django.core.validators import MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+
 from menu.models import Pizza
 from offers.models import NewOrder
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
 
 
 class Country(models.Model):
@@ -17,15 +19,15 @@ class ContactInformation(models.Model):
     address = models.CharField(max_length=255)
     house_number = models.PositiveIntegerField(default=0)
     city = models.CharField(max_length=255)
-    zip = models.IntegerField()
+    zip = models.IntegerField(validators=[MinValueValidator(100), MaxValueValidator(9999)])
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
 
 
 class PaymentInformation(models.Model):
     name = models.CharField(max_length=255)
-    card_number = models.IntegerField(validators=[MaxValueValidator(9999999999999999)])
-    cvc = models.IntegerField(validators=[MaxValueValidator(999)])
-    expiry = models.DateField()
+    card_number = CardNumberField('card number')
+    cvc = SecurityCodeField('security code')
+    expiry = CardExpiryField('expiration date')
 
 
 class OrderPizza(models.Model):
