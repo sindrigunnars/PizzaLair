@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="add-offer">
+        <button class="back-button" onclick="window.history.back()">&larr;</button>
+        <div class="offer-name-and-desc">
+            <h4>{{ offer.name }}</h4>
+            <p>{{ offer.description }}</p>
+        </div>
+        <div class="pizza-select">
+            <form action="{% url 'add_offer_to_cart'%}" method="post">
+                {% csrf_token %}
+                <option value="">Pizza</option>
+                <select id="pizza-select-drop1" name="pizza1">
+                    {% for pizza in pizzas %}
+                        <option value="{{ pizza.id }}">{{ pizza.name }} - {{ pizza.price }} kr</option>
+                    {% endfor %}
+                </select>
+                <p></p>
+                <option value="">Drink</option>
+                <select id="pizza-select-drop2" name="pizza2">
+                    <option value="test">Coca Cola</option>
+                </select>
+                <input type="hidden" name="OfferID" value="{{ offer.id }}">
+                <input type="submit" value="Add to cart">
+            <form>
+        </div>
+        <div class="offer-img-and-price">
+            <img class="offer-img" src="{{ offer.image }}" />
+        </div>
+    </div>
+{% endblock %}
