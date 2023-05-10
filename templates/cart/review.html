@@ -2,6 +2,9 @@
 {% block content %}
 
     <style>
+    .order {
+        margin-bottom: 100px;
+    }
     .pizza {
         border-bottom: solid darkgray;
     }
@@ -48,10 +51,8 @@
             <div class="contact">
                 <h6>Contact:</h6>
                 <p>{{ order.contact_information.name }}</p>
-                <p>{{ order.contact_information.address }}</p>
-                <p>{{ order.contact_information.house_number }}</p>
-                <p>{{ order.contact_information.city }}</p>
-                <p>{{ order.contact_information.zip }}</p>
+                <p>{{ order.contact_information.address }} {{ order.contact_information.house_number }}</p>
+                <p>{{ order.contact_information.zip }} {{ order.contact_information.city }}</p>
                 <p>{{ order.contact_information.country }}</p>
             </div>
         </div>
