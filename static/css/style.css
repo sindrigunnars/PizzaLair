@@ -257,14 +257,6 @@ div#card {
     justify-content: center;
 }
 
-h5 {
-    color: white;
-    background-color: #28242c;
-    padding: 10px;
-    margin-right: 25%;
-    margin-left: 25%;
-    border-radius: 2%;
-}
 input[type="text"] {
     opacity: .8;
 }
@@ -274,6 +266,7 @@ input[type="number"] {
 select {
     opacity: .8;
 }
+/*
 .form {
     display: flex;
     flex-direction: column;
@@ -287,6 +280,7 @@ select {
     border-radius: 20px;
 }
 
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -295,7 +289,7 @@ select {
     margin-bottom: 90px;
     margin-top: 20px;
 }
-
+*/
 .content-cart{
     position: relative;
     display: flex;
@@ -447,4 +441,244 @@ select {
     flex-direction: column;
     gap: 10px;
     margin-left: 30px;
+}
+
+/*  Review CSS  */
+.review-order {
+    display: flex;
+}
+
+.review-pizza {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+}
+
+.review-item {
+    display: flex;
+    border-bottom: solid lightgray;
+    border-radius: 2%;
+    background-color: #f8f9fa;
+    padding: 10px;
+    align-content: baseline;
+}
+
+.title-img {
+    display: flex;
+    justify-content: space-between;
+}
+
+#review-img {
+    display: inline;
+    margin-left: 30px;
+    width: 50px;
+    height: 50px;
+}
+
+#review-pizza-name {
+    margin-left: 10px;
+}
+
+.review-amount {
+    border: #cccccc solid thin;
+    padding: 5px 20px;
+}
+
+.review-offer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+}
+
+.review-offer-pizza {
+    margin-left: 10px;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 30px;
+    gap: 10px;
+}
+
+.customer-summary {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    gap: 60px;
+}
+
+.page-title {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 90px;
+}
+
+.back-btn {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 10px;
+  align-items: center;
+  background: #FFFFFF;
+  border: 0 solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1A202C;
+  display: inline-flex;
+  font-weight: 700;
+  height: 46px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 24px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.review-price {
+    margin-left: auto;
+}
+
+.offer-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-payment {
+    display: flex;
+    justify-content: space-between;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-left: 70px;
+}
+
+.review-contact {
+    display: flex;
+    justify-content: space-between;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-left: 70px;
+}
+
+.review-col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+.review-col-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    margin-top: 22px;
+    margin-right: 30px;
+}
+
+.h-5 {
+    position: relative;
+    margin-left: -60px;
+    margin-top: -30px;
+    border-radius: 2%;
+    width: 200px;
+    color: white;
+    background-color: #28242c;
+    padding: 10px;
+}
+
+.title-col-1 {
+    text-align: left;
+    color: #999fa4;
+}
+
+.title-col-2 {
+    text-align: right;
+    color: #999fa4;
+}
+
+.cust-info {
+    border-bottom: solid lightgray;
+    font-weight: bold;
+    text-align: left;
+}
+
+.confirm-order {
+    text-align: right;
+    padding-top: 10px;
+}
+
+#total-price {
+    font-size: larger;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+#confirm-order-btn {
+  background-color: #fff;
+  border: 1px solid #28242c;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+}
+
+#confirm-order-btn:hover {
+  background-color: #28242c;
+  color: #f8f9fa;
+}
+
+/*      Payment CSS     */
+.form-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-shrink: 5;
+}
+
+.form {
+    display: flex;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 100px;
+    margin-right: 35%;
+    width: 500px;
+    padding: 20px 50px;
+    text-align: left;
+    background-color: #f3f8fa;
+}
+
+.btn-primary {
+    clear:both;
+    margin: 10px 0;
+    width: 300px;
+}
+
+.h-5-payment {
+    position: absolute;
+    margin-top: 80px;
+    width: 200px;
+    height: fit-content;
+    color: white;
+    background-color: #28242c;
+    padding: 10px;
+
 }
