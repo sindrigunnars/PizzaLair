@@ -60,8 +60,7 @@ def add_offer_to_cart(request):
             new_offer.items.add(OrderItem.objects.create(item=pizza_object2))
             new_offer.price = max(pizza_object1.price, pizza_object2.price)
         else:
-            new_offer.price = pizza_object1.price
-
+            new_offer.price = 2000
         new_offer.save()
 
         try:
