@@ -36,7 +36,7 @@ def index(request):
             'name': x.name,
             'price': x.price,
             'image': x.images.all()[0].image
-        } for x in list(Pizza.objects.all().order_by('-price'))]
+        } for x in list(Pizza.objects.all().order_by('price'))]
         return JsonResponse({'data': pizzas})
     if 'filter' in request.GET:
         type_name = request.GET['filter']
