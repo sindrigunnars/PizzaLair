@@ -79,6 +79,10 @@ def create_contact(request):
             contact = form.save()
             current_order.contact_information = contact
             current_order.save()
+
+            if request.POST['pay_type'] == 'Pay Later':
+                return redirect('review')
+
             return redirect('create_payment')
     else:
         form = ContactCreateForm()
