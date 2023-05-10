@@ -6,13 +6,13 @@
             <form action="{% url 'create_contact' %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-                <span><a href="{% url 'create_payment' %}">
-                    <input type="submit" value="Pay Now" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
-                </a></span>
+                <span>
+                    <input name="pay_type" type="submit" value="Pay Now" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
+                </span>
                 <span>or</span>
-                <span><a href="{% url 'review' %}">
-                    <input type="submit" value="Pay Later" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
-                </a></span>
+                <span>
+                    <input name="pay_type" type="submit" value="Pay Later" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
+                </span>
             </form>
             {% if order.contact_information %}
                     <a href="{% url 'create_payment' %}"><button>Continue without editing</button></a>
