@@ -110,3 +110,10 @@ def review(request):
         'order': Order.objects.get(order_user=request.user, completed=False),
     }
     return render(request, 'cart/review.html', context)
+
+
+def confirmation(request):
+    cust_order = Order.objects.get(order_user=request.user, completed=False)
+    cust_order.completed = True
+    cust_order.save()
+    return render(request, 'cart/confirmation.html', {'message': 'Your order has been confirmed'})

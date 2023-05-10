@@ -56,6 +56,6 @@
                 <p>{{ order.contact_information.country }}</p>
             </div>
         </div>
-    <button type="button" id="confirm-order-btn">Confirm Order</button>
+        <a href="{% url 'confirmation' %}"><button type="button" id="confirm-order-btn">Confirm Order</button></a>
     </div>
 {% endblock %}
