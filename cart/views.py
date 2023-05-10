@@ -86,7 +86,18 @@ def create_contact(request):
 
             return redirect('create_payment')
     else:
-        form = ContactCreateForm()
+        current_order = Order.objects.get(order_user=request.user, completed=False)
+        if current_order.contact_information:
+            info = current_order.contact_information
+            form = ContactCreateForm(initial={'name': info.name,
+                                              'address': info.address,
+                                              'house_number': info.house_number,
+                                              'city': info.city,
+                                              'zip': info.zip,
+                                              'country': info.country,
+                                              })
+        else:
+            form = ContactCreateForm()
     return render(request, 'cart/create_contact.html', {
         'form': form,
         'order': Order.objects.get(order_user=request.user, completed=False)
@@ -103,7 +114,16 @@ def create_payment(request):
             current_order.save()
             return redirect('review')
     else:
-        form = PaymentCreateForm()
+        current_order = Order.objects.get(order_user=request.user, completed=False)
+        if current_order.credit_card:
+            info = current_order.credit_card
+            form = PaymentCreateForm(initial={'card_number': info.card_number,
+                                              'name': info.name,
+                                              'cvc': info.cvc,
+                                              'expiry': info.expiry
+                                              })
+        else:
+            form = PaymentCreateForm()
     return render(request, 'cart/create_payment.html', {
         'form': form,
         'order': Order.objects.get(order_user=request.user, completed=False)

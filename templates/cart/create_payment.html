@@ -9,9 +9,6 @@
             {{ form.as_p }}
                 <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
             </form>
-            {% if order.credit_card %}
-                <a href="{% url 'review' %}"><button>Continue without editing</button></a>
-            {% endif %}
         </div>
     </div>
 {% endblock %}
