@@ -1,11 +1,43 @@
 {% extends 'clear_base.html' %}
 {% block content %}
-    <div class="form-container">
-        <div class="form">
-            <a href="{% url 'cart-index' %}"><button class="back-btn">&larr;</button></a>
+
+    <style>
+    .contact-form-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-shrink: 5;
+    }
+    .contact-form {
+    display: flex;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 100px;
+    margin-right: 35%;
+    margin-bottom: 100px;
+    width: 800px;
+    padding: 20px 50px;
+    text-align: left;
+    background-color: #f3f8fa;
+    }
+    .h-5-contact {
+    position: absolute;
+    margin-top: 80px;
+    width: 200px;
+    height: fit-content;
+    color: white;
+    background-color: #28242c;
+    padding: 10px;
+
+}
+    </style>
+
+    <div class="contact-form-container">
+        <span><a href="{% url 'cart-index' %}"><button class="back-btn">&larr;</button></a></span>
+        <span><h2 class="page-title" id="contact-title">Go back to Cart</h2></span>
+        <h5 class="h-5-contact">Contact information</h5>
+        <div class="contact-form">
             <form action="{% url 'create_contact' %}" method="post">
             {% csrf_token %}
-                <h5>Please enter your contact information to continue</h5>
                 {{ form.as_p }}
                 <span>
                     <input name="pay_type" type="submit" value="Pay Now" class="btn btn-primary" style="clear:both; margin: 10px 0"/>

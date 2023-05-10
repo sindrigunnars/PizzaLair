@@ -266,30 +266,7 @@ input[type="number"] {
 select {
     opacity: .8;
 }
-/*
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-self: center;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: #28242c;
-    color: aliceblue;
-    padding: 20px;
-    border-radius: 20px;
-}
 
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 100px;
-    margin-bottom: 90px;
-    margin-top: 20px;
-}
-*/
 .content-cart{
     position: relative;
     display: flex;
@@ -648,13 +625,13 @@ select {
 }
 
 /*      Payment CSS     */
-.form-container {
+.payment-form-container {
     display: flex;
     justify-content: space-evenly;
     flex-shrink: 5;
 }
 
-.form {
+.payment-form {
     display: flex;
     border: #E2E8F0 solid thin;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -680,5 +657,4 @@ select {
     color: white;
     background-color: #28242c;
     padding: 10px;
-
 }

@@ -1,11 +1,11 @@
 {% extends 'clear_base.html' %}
 {% block content %}
 
-    <div class="form-container">
-        <span><a href="{% url 'create_contact' %}"><button class="back-btn pay-btn">&larr;</button></a></span>
+    <div class="payment-form-container">
+        <span><a href="{% url 'create_contact' %}"><button class="back-btn">&larr;</button></a></span>
         <span><h2 class="page-title" id="payment-title">Go back to Contact</h2></span>
         <h5 class="h-5-payment">Payment details</h5>
-        <div class="form">
+        <div class="payment-form">
             <form action="{% url 'create_payment' %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
