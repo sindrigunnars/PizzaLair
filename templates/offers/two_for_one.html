@@ -7,7 +7,7 @@
             <p>{{ offer.description }}</p>
         </div>
         <div class="pizza-select">
-            <form action="{% url 'add_offer_to_cart'%}" method="post">
+            <form class="offer-form" action="{% url 'add_offer_to_cart'%}" method="post">
                 {% csrf_token %}
                 <option value="">Pizza 1</option>
                 <select id="pizza-select-drop1" name="pizza1">
@@ -15,7 +15,6 @@
                         <option value="{{ pizza.id }}">{{ pizza.name }} - {{ pizza.price }} kr</option>
                     {% endfor %}
                 </select>
-                <p></p>
                 <option value="">Pizza 2</option>
                 <select id="pizza-select-drop2" name="pizza2">
                     {% for pizza in pizzas %}
@@ -23,6 +22,7 @@
                     {% endfor %}
                 </select>
                 <input type="hidden" name="OfferID" value="{{ offer.id }}">
+                <br>
                 <input type="submit" value="Add to cart">
             <form>
         </div>

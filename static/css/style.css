@@ -448,3 +448,10 @@ select {
     padding: 20px;
     border-radius: 20px;
 }
+
+.offer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 30px;
+}
