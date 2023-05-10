@@ -1,8 +1,10 @@
 {% extends 'clear_base.html' %}
 {% block content %}
-    <form method="post" class="form form-row">
-    {% csrf_token %}
-    {{ form }}
-        <input type="submit" class="btn btn-primary" value="Login"/>
-    </form>
+    <div class="form-container">
+        <form class="form" method="post" class="form form-row">
+        {% csrf_token %}
+        {{ form }}
+            <input type="submit" class="btn btn-primary" value="Login"/>
+        </form>
+    </div>
 {%  endblock %}

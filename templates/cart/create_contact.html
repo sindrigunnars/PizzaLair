@@ -1,7 +1,7 @@
 {% extends 'clear_base.html' %}
 {% block content %}
-    <div class="contact-form-container">
-        <div class="contact-form">
+    <div class="form-container">
+        <div class="form">
             <a href="{% url 'cart-index' %}"><button class="back-btn">&larr;</button></a>
             <form action="{% url 'create_contact' %}" method="post">
             {% csrf_token %}
