@@ -153,6 +153,7 @@ $(document).ready( function () {
             type: 'GET',
             success: function (resp) {
                 $('.pizza').empty();
+                $('.checkout').prop('disabled', true);
             },
             errors: function (xhr, status, error) {
                 console.log(error)
