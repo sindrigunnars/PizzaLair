@@ -1,11 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'clear_base.html' %}
 {% block content %}
-    <div class="contact-form-container">
-        <h5>Please enter your payment information</h5>
-        <div class="contact-form">
+    <div class="payment-form-container">
+        <div class="payment-form">
             <form action="{% url 'create_payment' %}" method="post">
             {% csrf_token %}
-            {{ form }}
+            <button class="back-btn" onclick="window.history.back()">&larr;</button>
+            <h5>Please fill in your payment details</h5>
+            {{ form.as_p }}
                 <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
             </form>
             {% if order.credit_card %}
