@@ -2,53 +2,154 @@
 {% block content %}
 
     <style>
-    .order {
+    .review-order {
+        display: flex;
         margin-bottom: 100px;
     }
-    .pizza {
-        border-bottom: solid darkgray;
+    .review-pizza {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 2;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 10px;
+        gap: 10px;
     }
-    .offer {
-        border-bottom: solid darkgray;
+    .review-item {
+        display: flex;
+        border-bottom: solid lightgray;
+        background-color: #f8f9fa;
+        padding: 10px;
+        align-content: baseline;
+    }
+    .title-img {
+        display: flex;
+        justify-content: space-between;
+    }
+    #review-img {
+        display: inline;
+        margin-left: 30px;
+        width: 50px;
+        height: 50px;
+        align-items: flex-end;
+    }
+    .title-img h4 {
+        margin-left: 10px;
+    }
+
+    .review-amount {
+        border: #cccccc solid thin;
+        padding: 5px 20px;
+    }
+
+    .review-offer {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 2;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 10px;
+        gap: 10px;
+    }
+    .review-offer-pizza {
+        margin-left: 10px;
+    }
+    .order-summary {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-top: 100px;
+        margin-left: 30px;
+        gap: 10px;
+    }
+    .customer-summary {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-top: 100px;
+    }
+
+    .review-order h2 {
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 90px;
+    }
+    .back-btn {
+      position: absolute;
+      margin-top: 5px;
+      margin-left: 10px;
+      align-items: center;
+      background: #FFFFFF;
+      border: 0 solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-sizing: border-box;
+      color: #1A202C;
+      display: inline-flex;
+      font-weight: 700;
+      height: 46px;
+      justify-content: center;
+      line-height: 24px;
+      padding: 24px;
+      width: auto;
+      border-radius: 8px;
+    }
+    .review-price {
+        margin-left: auto;
+    }
+    .offer-name {
+        display: flex;
+        flex-direction: column;
     }
     </style>
 
-    <div class="order">
-    <h2>Review your order</h2>
-    <a href="{% url 'create_payment' %}"><button class="back-btn">&larr;</button></a>
+    <div class="review-order">
+        <span><a href="{% url 'create_payment' %}"><button class="back-btn">&larr;</button></a></span>
+        <h2>Review order</h2>
         <div class="order-summary">
-            <h4>Your Order:</h4>
-            <div class="pizza">
+            <div class="review-pizza">
                 {% for item in order.pizzas.all %}
-                    <div class="pizza-item" id="{{ item.id }}">
-                        <p>{{ item.item.name }}</p>
-                        <p class="amount">{{ item.amount }}</p>
-                        <img src="{{item.item.images.all.0.image}}" alt="Delicious lookin pizza"/>
+                    <div class="review-item">
+                        <div class="title-img">
+                            <p class="review-amount">{{ item.amount }}</p>
+                            <img src="{{item.item.images.all.0.image}}" alt="Delicious lookin pizza" id="review-img"/>
+                            <h4>{{ item.item.name }}</h4>
+                        </div>
+                        <div class="review-price">
+                            <p>{{ item.item.price }} kr.</p>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
-            <div class="offer">
+            <div class="review-offer">
                 {% for item in order.offers.all %}
-                    <div class="offer-item" id="{{ item.id }}">
-                        {% for pizza in item.item.items.all %}
-                            <p>{{ pizza.item.name }}</p>
-                        {% endfor %}
-                        <p class="amount">{{ item.amount }}</p>
-                        <img src="{{item.item.order.image}}" alt="Offer image"/>
+                    <div class="review-item">
+                        <div class="title-img">
+                            <p class="review-amount">{{ item.amount }}</p>
+                            <img src="{{item.item.order.image}}" alt="Offer image" id="review-img"/>
+                            <div class="offer-name">
+                                <h4>{{ item.item.order.name }}</h4>
+                                {% for pizza in item.item.items.all %}
+                                    <p class="review-offer-pizza">({{ pizza.item.name }})</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="review-price">
+                            <p>{{ item.item.order.price }} kr.</p>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
         <div class="customer-summary">
             <h4>Customer Details:</h4>
-            <div class="payment">
+            <div class="review-payment">
                 <h6>Payment:</h6>
                 <p>{{ order.credit_card.name }}</p>
                 <p>{{ order.credit_card.card_number }}</p>
                 <p>{{ order.credit_card.cvc }}</p>
                 <p>{{ order.credit_card.expiry | date:'m/y' }}</p>
             </div>
-            <div class="contact">
+            <div class="review-contact">
                 <h6>Contact:</h6>
                 <p>{{ order.contact_information.name }}</p>
                 <p>{{ order.contact_information.address }} {{ order.contact_information.house_number }}</p>
