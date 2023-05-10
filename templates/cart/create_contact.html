@@ -1,10 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'clear_base.html' %}
 {% block content %}
     <div class="contact-form-container">
-        <h5>Please enter your contact information to continue with your order</h5>
         <div class="contact-form">
             <form action="{% url 'create_contact' %}" method="post">
             {% csrf_token %}
+            <button class="back-btn" onclick="window.history.back()">&larr;</button>
+            <h5>Please enter your contact information to continue</h5>
             {{ form.as_p }}
                 <span>
                     <input name="pay_type" type="submit" value="Pay Now" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
