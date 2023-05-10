@@ -93,6 +93,7 @@ div#card {
 
 .offer-text-box {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
