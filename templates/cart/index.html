@@ -1,10 +1,10 @@
 {% extends 'clear_base.html'%}
 {% block content %}
-    <div class="content">
-        <button type="button" class="clear-all">X</button>
-        <div class="pizza">
+    <div class="content-cart">
+        <button type="button" class="clear-all">Clear all</button>
+        <div class="pizza-cart">
             {% for item in orders.pizzas.all %}
-                <div class="pizza-item" id="{{ item.id }}">
+                <div class="pizza-item-cart" id="{{ item.id }}">
                     <p>{{ item.item.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
                     {%  if item.amount < 1 %}
@@ -13,13 +13,13 @@
                         <button type="button" class="minus-button-pizza">-</button>
                     {% endif %}
                     <button type="button" class="add-button-pizza">+</button>
-                    <button type="button" class="remove-button-pizza">X</button>
+                    <button type="button" class="remove-button-pizza">Remove</button>
                     <!--<img src="{{item.item.images.all.0.image}}"-->
                 </div>
             {% endfor %}
             <br>
             {% for item in orders.offers.all %}
-                <div class="offer-item" id="{{ item.id }}">
+                <div class="offer-item-cart" id="{{ item.id }}">
                     <p>{{ item.item.order.name }}</p>
                     <p class="amount">{{ item.amount }}</p>
                     {%  if item.amount < 1 %}
@@ -28,7 +28,7 @@
                         <button type="button" class="minus-button-offer">-</button>
                     {% endif %}
                     <button type="button" class="add-button-offer">+</button>
-                    <button type="button" class="remove-button-offer">X</button>
+                    <button type="button" class="remove-button-offer">Remove</button>
                     <!--<img src="{{item.item.order.image}}">-->
                 </div>
             {% endfor %}

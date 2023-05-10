@@ -294,3 +294,83 @@ select {
     margin-bottom: 90px;
     margin-top: 20px;
 }
+
+.content-cart{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.pizza-cart {
+    position: relative;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    background-color: #f2f2f2;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-item-cart {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    width: 150px;
+    height: 200px;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offer-item-cart {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    width: 150px;
+    height: 200px;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clear-all {
+    margin-bottom: 20px;
+}
+
+.checkout {
+    margin-top: 20px;
+}
+
+.minus-button-pizza {
+    border: none;
+    font-size: 2rem;
+}
+
+.add-button-pizza {
+    border: none;
+    font-size: 2rem;
+}
+
+.remove-button-pizza {
+    border: 1px solid #ccc;
+}
+
+.minus-button-offer {
+    border: none;
+    font-size: 2rem;
+}
+
+.add-button-offer {
+    border: none;
+    font-size: 2rem;
+}
+
+.remove-button-offer {
+    border: 1px solid #ccc;
+}
