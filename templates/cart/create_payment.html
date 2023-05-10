@@ -1,11 +1,11 @@
 {% extends 'clear_base.html' %}
 {% block content %}
     <div class="payment-form-container">
+        <a href="{% url 'create_contact' %}"><button class="back-btn">&larr;</button></a>
         <div class="payment-form">
             <form action="{% url 'create_payment' %}" method="post">
             {% csrf_token %}
-            <button class="back-btn" onclick="window.history.back()">&larr;</button>
-            <h5>Please fill in your payment details</h5>
+                <h5>Please fill in your payment details</h5>
             {{ form.as_p }}
                 <input type="submit" value="Confirm" class="btn btn-primary" style="clear:both; margin: 10px 0"/>
             </form>

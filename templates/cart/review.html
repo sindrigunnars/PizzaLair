@@ -15,7 +15,7 @@
 
     <div class="order">
     <h2>Review your order</h2>
-    <button class="back-btn" onclick="window.history.back()">&larr;</button>
+    <a href="{% url 'create_payment' %}"><button class="back-btn">&larr;</button></a>
         <div class="order-summary">
             <h4>Your Order:</h4>
             <div class="pizza">
