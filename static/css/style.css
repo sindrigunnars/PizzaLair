@@ -450,6 +450,20 @@ select {
     border-radius: 20px;
 }
 
+.content-contact {
+    border: 3px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    width: 800px;
+    height: 400px;
+}
+
 .offer-form {
     display: flex;
     flex-direction: column;

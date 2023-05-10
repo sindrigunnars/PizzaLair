@@ -1,9 +1,9 @@
 {% extends 'clear_base.html'%}
 {% block content %}
-    <div class="content">
-        <div class="about_us">
-            <p>{{ information.email }}</p>
-            <p>{{ information.phone_number }}</p>
+    <div class="content-contact">
+        <div class="about-us">
+            <h2>{{ information.email }}</h2>
+            <p>Phone: {{ information.phone_number }}</p>
             <p>{{ user }}</p>
         </div>
     </div>
