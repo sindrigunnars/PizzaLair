@@ -29,8 +29,7 @@
             <div class="offer">
                 {% for item in order.offers.all %}
                     <div class="offer-item" id="{{ item.id }}">
-                        <p>{{ item.item.order.name }}</p>
-                        {% for pizza in order.offers.all.item.items.all %}
+                        {% for pizza in item.item.items.all %}
                             <p>{{ pizza.item.name }}</p>
                         {% endfor %}
                         <p class="amount">{{ item.amount }}</p>
