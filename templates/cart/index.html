@@ -33,6 +33,7 @@
                 </div>
             {% endfor %}
         </div>
+        <p class="price">Price: {{ orders.price }} kr</p>
         {% if orders.price != 0 %}
             <a href="{% url 'create_contact' %}"><button type="button" class="checkout">Checkout</button></a>
         {% else %}

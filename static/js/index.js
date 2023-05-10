@@ -47,6 +47,7 @@ $(document).ready( function () {
                 if (new_price > 0) {
                      checkout_btn.prop('disabled',false)
                 }
+                $('.price').text(`Price: ${new_price} kr`);
                 elem.text(new_amount);
 
             },
@@ -76,7 +77,7 @@ $(document).ready( function () {
                 if (new_price < 1) {
                      checkout_btn.prop('disabled', true)
                 }
-
+                $('.price').text(`Price: ${new_price} kr`);
                 elem.text(new_amount);
             },
             errors: function (xhr, status, error) {
@@ -105,6 +106,7 @@ $(document).ready( function () {
                 if (new_price > 0) {
                      checkout_btn.prop('disabled', false)
                 }
+                $('.price').text(`Price: ${new_price} kr`);
                 elem.text(new_amount);
             },
             errors: function (xhr, status, error) {
@@ -133,6 +135,7 @@ $(document).ready( function () {
                 if (new_price < 1) {
                      checkout_btn.prop('disabled', true)
                 }
+                $('.price').text(`Price: ${new_price} kr`);
                 elem.text(new_amount);
             },
             errors: function (xhr, status, error) {
@@ -173,6 +176,7 @@ $(document).ready( function () {
                 if (new_price < 1) {
                      checkout_btn.prop('disabled', true)
                 }
+                $('.price').text(`Price: ${new_price} kr`);
             },
             errors: function (xhr, status, error) {
                 console.log(error)
@@ -197,6 +201,7 @@ $(document).ready( function () {
                 if (new_price < 1) {
                      checkout_btn.prop('disabled', true)
                 }
+                $('.price').text(`Price: ${new_price} kr`);
             },
             errors: function (xhr, status, error) {
                 console.log(error)
