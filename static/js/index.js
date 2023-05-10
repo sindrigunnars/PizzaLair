@@ -152,8 +152,9 @@ $(document).ready( function () {
             url: '/cart?clear-all',
             type: 'GET',
             success: function (resp) {
-                $('.pizza').empty();
+                $('.pizza-cart').empty();
                 $('.checkout').prop('disabled', true);
+                $('.price').text(`Price: 0 kr`);
             },
             errors: function (xhr, status, error) {
                 console.log(error)
