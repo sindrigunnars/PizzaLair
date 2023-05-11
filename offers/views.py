@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
-
+from datetime import datetime, time
 from cart.models import Order, OrderOffer
 from menu.models import Pizza
 from .models import Offer, NewOrder, OrderItem
@@ -10,8 +10,13 @@ from .models import Offer, NewOrder, OrderItem
 
 
 def index(request):
+    curr_time = datetime.utcnow().time()
+    active_time = False
+    if time(11, 00) <= curr_time <= time(13, 00):
+        active_time = True
     context = {
         'offers': Offer.objects.all().order_by('name'),
+        'active': active_time
     }
     return render(request, 'offers/index.html', context)
 

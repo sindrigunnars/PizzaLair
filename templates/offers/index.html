@@ -8,9 +8,15 @@
                     <div class="offer-text-box">
                         <h4>{{ offer.name }}</h4>
                         <p>{{ offer.description }}</p>
-                        <a href="/offers/{{ offer.id }}/">
-                            <button>Add to cart</button>
-                        </a>
+                        {% if not active and offer.name == 'Lunch offer' %}
+                            <a href="/offers/{{ offer.id }}/">
+                                <button disabled="True">Add to cart</button>
+                            </a>
+                        {% else %}
+                            <a href="/offers/{{ offer.id }}/">
+                                <button>Add to cart</button>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

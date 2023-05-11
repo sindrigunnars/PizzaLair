@@ -73,7 +73,9 @@ div#card {
 }
 
 .offer {
-    display: flex;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 33% 33% 33%;
 }
 
 .offer-item {
