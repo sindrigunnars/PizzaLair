@@ -1,10 +1,14 @@
-{% extends 'clear_base.html' %}
+{% extends 'base.html' %}
 {% block content %}
+
     <div class="form-container">
         <form class="form" method="post" class="form form-row">
-        {% csrf_token %}
-        {{ form }}
-            <input type="submit" class="btn btn-primary" value="Login"/>
+            <h3 class="login-title">LOGIN</h3>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" id="login-btn" value="Login"/>
+            <p id="redirect-register">Don't have an account? <a href="{% url 'register' %}" class="link-signup">Sign Up</a>
+            </p>
         </form>
     </div>
 {%  endblock %}

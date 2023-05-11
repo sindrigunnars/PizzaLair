@@ -257,15 +257,100 @@ div#card {
     justify-content: center;
 }
 
-input[type="text"] {
-    opacity: .8;
+/*  Login/Signup    */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: #28242c;
+    color: #f8f9fa;
+    padding: 30px;
+    border-radius: 2%;
+    gap: 10px;
+    width: fit-content;
 }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+input[type="password"] {
+    background-color: #28242c;
+    border: #f8f9fa thin solid;
+    color: #f8f9fa;
+    width: 300px;
+    height: 40px;
+    text-decoration: none;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+#login-btn {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #28242c;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px 16px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    vertical-align: middle;
+    margin-top: 40px;
+    width: 40%;
+    align-self: center;
+}
+
+#login-btn:hover {
+    background-color: rgba(243, 244, 246, 0.94);
+    transition-duration: 0.1s;
+}
+
+.login-title {
+    align-self: center;
+    font-weight: bolder;
+    padding: 20px 0;
+}
+
+#redirect-register {
+    color: #f8f9fa;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.link-signup {
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    background-color: #28242c;
+    border: #f8f9fa thin solid;
+    color: #f8f9fa;
+    width: 300px;
+    height: 40px;
+}
+
 input[type="number"] {
     opacity: .8;
 }
 select {
     opacity: .8;
 }
+/*  Cart    */
 
 .content-cart{
     position: relative;
@@ -349,8 +434,8 @@ select {
 
 .sort-by-select {
     padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    /*border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;*/
     cursor: pointer;
     opacity: 1;
     border: 2px solid black;
@@ -359,8 +444,8 @@ select {
 
 .filter-by-select {
     padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    /*border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;*/
     cursor: pointer;
     opacity: 1;
     border: 2px solid black;
