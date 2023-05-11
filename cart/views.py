@@ -143,7 +143,7 @@ def confirmation(request):
     try:
         cust_order = Order.objects.get(order_user=request.user, completed=False)
         cust_order.completed = True
-        cust_order.save()
+        #cust_order.save()
     except Order.DoesNotExist:
         return redirect('Home Page')
     return render(request, 'cart/confirmation.html', {'message': 'Your order has been confirmed'})
