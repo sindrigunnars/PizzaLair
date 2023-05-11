@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_auto_logout.middleware.auto_logout',
             ],
         },
     },
@@ -131,3 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/userprofile/login'
 LOGIN_REDIRECT_URL = '/userprofile/profile'
+
+
+AUTO_LOGOUT = {'IDLE_TIME': 600}
+

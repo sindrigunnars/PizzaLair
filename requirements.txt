@@ -12,3 +12,4 @@ six==1.16.0
 sqlparse==0.4.2
 tzdata==2022.1
 django-credit-cards==0.4.1
+django-auto-logout==0.5.1
