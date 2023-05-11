@@ -1,5 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.cache import cache_control
+
 from cart.forms.payment_form import PaymentCreateForm
 from cart.models import Order, PaymentInformation
 from cart.forms.contact_form import ContactCreateForm
@@ -138,7 +140,10 @@ def review(request):
 
 
 def confirmation(request):
-    cust_order = Order.objects.get(order_user=request.user, completed=False)
-    cust_order.completed = True
-    cust_order.save()
+    try:
+        cust_order = Order.objects.get(order_user=request.user, completed=False)
+        cust_order.completed = True
+        cust_order.save()
+    except Order.DoesNotExist:
+        return redirect('Home Page')
     return render(request, 'cart/confirmation.html', {'message': 'Your order has been confirmed'})
