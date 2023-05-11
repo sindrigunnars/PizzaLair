@@ -18,4 +18,10 @@
             </form>
         </div>
     </div>
+    <p class="all-images">All images</p>
+    <div class="images">
+        {% for image in pizza.images.all %}
+            <img class="pizza-img-list" src="{{ image.image }}" />
+        {% endfor %}
+    </div>
 {% endblock %}

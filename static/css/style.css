@@ -162,6 +162,25 @@ div#card {
     margin-top: 20px;
 }
 
+.all-images {
+    font-size: large;
+    background-color: aliceblue;
+}
+
+.pizza-img-list {
+    border: solid 2px rgba(0, 0, 0, .5);
+    max-width: 75%;
+    /* height: auto; */
+    height: fit-content;
+}
+
+.images {
+    margin-bottom: 100px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
 .pizza-img {
     width: 100%;
     height: 250px;
@@ -856,52 +875,4 @@ input#id_image.form-control {
     color: #f8f9fa;
     width: 300px;
     height: 40px;
-}
-
-/*  Confirmation page   */
-.confirm-msg {
-    width: fit-content;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    align-self: center;
-    margin-top: 80px;
-    border: #E2E8F0 solid thin;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    gap: 40px;
-    background-color: #f8f9fa;
-}
-
-.menu-btn {
-    align-items: center;
-    background-color: #28242c;
-    border: 0;
-    border-radius: 100px;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 20px;
-    max-width: 480px;
-    min-height: 40px;
-    min-width: 0px;
-    padding: 0px 20px;
-    text-align: center;
-    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-}
-
-.menu-btn:hover,
-.menu-btn:focus {
-  background-color: rgba(40, 36, 44, 0.77);
-  color: #ffffff;
-}
-
-.menu-btn:active {
-  background: rgba(40, 36, 44, 0.89);
-  color: #ffffff;
 }
