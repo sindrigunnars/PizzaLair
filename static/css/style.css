@@ -277,23 +277,10 @@ div#card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
+    margin: 80px auto;
 }
 
-input[type="password"] {
-    background-color: #28242c;
-    border: #f8f9fa thin solid;
-    color: #f8f9fa;
-    width: 300px;
-    height: 40px;
-    text-decoration: none;
-}
-
-input:focus, textarea:focus, select:focus{
-    outline: none;
-}
-
-#login-btn {
+.login-register-btn {
     background-color: #f8f9fa;
     border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 6px;
@@ -313,7 +300,7 @@ input:focus, textarea:focus, select:focus{
     align-self: center;
 }
 
-#login-btn:hover {
+.login-register-btn:hover {
     background-color: rgba(243, 244, 246, 0.94);
     transition-duration: 0.1s;
 }
@@ -336,12 +323,29 @@ input:focus, textarea:focus, select:focus{
     font-weight: bold;
 }
 
-input[type="text"] {
+span.helptext {
+    display: block;
+}
+
+input#id_username {
     background-color: #28242c;
     border: #f8f9fa thin solid;
     color: #f8f9fa;
     width: 300px;
     height: 40px;
+}
+
+input[type="password"] {
+    background-color: #28242c;
+    border: #f8f9fa thin solid;
+    color: #f8f9fa;
+    width: 300px;
+    height: 40px;
+    text-decoration: none;
+}
+
+input[type="text"] {
+    opacity: .8;
 }
 
 input[type="number"] {
@@ -350,6 +354,23 @@ input[type="number"] {
 select {
     opacity: .8;
 }
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.signup-title {
+    align-self: center;
+    font-weight: bolder;
+    padding: 20px 0;
+}
+
+.signup-form {
+    text-align: left;
+}
+
+
+
 /*  Cart    */
 
 .content-cart{
