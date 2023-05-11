@@ -1,6 +1,8 @@
 {% extends 'clear_base.html' %}
 {% block title %}Confirmation{% endblock %}
 {% block content %}
-    <p>{{ message }}</p>
-    <a href="{% url 'Home Page' %}"><button>Go back to front page</button></a>
+    <div class="confirm-msg">
+        <h3>{{ message }}</h3>
+        <a href="{% url 'menu-index' %}"><button class="menu-btn">Go back to menu</button></a>
+    </div>
 {% endblock %}
