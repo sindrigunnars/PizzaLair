@@ -280,7 +280,7 @@ div#card {
     margin: 80px auto;
 }
 
-.login-register-btn {
+.btn-primary {
     background-color: #f8f9fa;
     border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 6px;
@@ -300,9 +300,19 @@ div#card {
     align-self: center;
 }
 
-.login-register-btn:hover {
+.btn-primary:hover {
     background-color: rgba(243, 244, 246, 0.94);
     transition-duration: 0.1s;
+    color: #28242c;
+}
+
+.btn-primary:active {
+    outline: none;
+    border: none;
+    background-color: rgba(243, 244, 246, 0.94);
+}
+.btn-primary:focus {
+    outline: 0;
 }
 
 .login-title {
@@ -341,7 +351,6 @@ input[type="password"] {
     color: #f8f9fa;
     width: 300px;
     height: 40px;
-    text-decoration: none;
 }
 
 input[type="text"] {
@@ -749,11 +758,7 @@ input:focus, textarea:focus, select:focus{
     background-color: #f3f8fa;
 }
 
-.btn-primary {
-    clear:both;
-    margin: 10px 0;
-    width: 300px;
-}
+
 
 .h-5-payment {
     position: absolute;
@@ -793,4 +798,60 @@ input:focus, textarea:focus, select:focus{
     color: white;
     background-color: #28242c;
     padding: 10px;
+}
+
+/*  Profile  */
+.profile-container {
+        display: flex;
+        color: #f8f9fa;
+        margin-top: 80px;
+        margin-left: 20%;
+        border-radius: 2%;
+}
+
+.profile-form {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#profile-pic {
+    height: 15rem;
+    padding: 50px;
+    border-radius: 50%;
+}
+
+.img-container {
+    border-radius: 2% 0 0 2%;
+    min-width: fit-content;
+    /* fallback for old browsers */
+    background: #f8f9fa;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, #f8f9fa, #28242c);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, #f8f9fa, #28242c)
+}
+
+.screen-name {
+    color: #28242c;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+input#id_screen_name.form-control {
+    background-color: #28242c;
+    border: #f8f9fa thin solid;
+    color: #f8f9fa;
+    width: 300px;
+    height: 40px;
+}
+
+input#id_image.form-control {
+    background-color: #28242c;
+    border: #f8f9fa thin solid;
+    color: #f8f9fa;
+    width: 300px;
+    height: 40px;
 }
