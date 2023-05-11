@@ -134,5 +134,7 @@ LOGIN_URL = '/userprofile/login'
 LOGIN_REDIRECT_URL = '/userprofile/profile'
 
 
-AUTO_LOGOUT = {'IDLE_TIME': 600}
+AUTO_LOGOUT = {
+    'IDLE_TIME': 600,
+}
 

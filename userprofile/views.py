@@ -19,6 +19,8 @@ def register(request):
 
 
 def profile(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     profile = UserProfile.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = ProfileForm(instance=profile, data=request.POST)

@@ -9,6 +9,8 @@ from menu.models import Pizza
 
 
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     if 'add-pizza' in request.GET:
         add_id = request.GET['add-pizza']
         cust_order = Order.objects.get(order_user=request.user, completed=False)
@@ -74,6 +76,8 @@ def index(request):
 
 
 def create_contact(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     if request.method == 'POST':
         form = ContactCreateForm(data=request.POST)
         if form.is_valid():
@@ -107,6 +111,8 @@ def create_contact(request):
 
 
 def create_payment(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     if request.method == 'POST':
         form = PaymentCreateForm(data=request.POST)
         if form.is_valid():
@@ -133,6 +139,8 @@ def create_payment(request):
 
 
 def review(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     context = {
         'order': Order.objects.get(order_user=request.user, completed=False),
     }
@@ -140,6 +148,8 @@ def review(request):
 
 
 def confirmation(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     try:
         cust_order = Order.objects.get(order_user=request.user, completed=False)
         cust_order.completed = True
