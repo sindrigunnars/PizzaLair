@@ -4,14 +4,6 @@ from cart.models import Order, OrderPizza
 from menu.models import Pizza, PizzaType
 
 
-# Create your views here.
-# pizzas = [
-#     {'name': 'Margarita', 'price': 2390},
-#     {'name': 'Pepperoni', 'price': 2890},
-#     {'name': 'Hawaiian', 'price': 2890}
-# ]
-
-
 def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
@@ -80,35 +72,3 @@ def add_menu_to_cart(request):
     except TypeError:
         return redirect('login')
     return redirect('menu-index')
-
-"""
-def search(request):
-    search = request.GET.get('q')
-    if search:
-        pizzas = Pizza.objects.filter(name__icontains=search)
-    else:
-        return redirect('menu-index')
-    return render(
-        request=request,
-        template_name='menu/index.html',
-        context={
-            'pizzas': pizzas
-        }
-    )
-"""
-
-"""
-def order_by(request):
-    order_by = request.GET.get('q')
-    if search:
-        pizzas = Pizza.objects.all().order_by(order_by)
-    else:
-        return redirect('menu-index')
-    return render(
-        request=request,
-        template_name='menu/index.html',
-        context={
-            'pizzas': pizzas
-        }
-    )
-"""
