@@ -12,3 +12,6 @@ mode off.
 
 Some extra requirements we implemented are an auto logout when user is idle for 10 minutes and a footer
 that includes information on our business.
+
+Github repository: https://github.com/sindrigunnars/verklegt-2
+Project walkthrough: 
