@@ -1,42 +1,64 @@
 {% extends 'clear_base.html'%}
 {% block title %}Cart{% endblock %}
 {% block content %}
-    <div class="content-cart">
-        <button type="button" class="clear-all-btn">Clear all</button>
-        <div class="pizza-cart">
-            {% for item in orders.pizzas.all %}
-                <div class="pizza-item-cart" id="{{ item.id }}">
-                    <p>{{ item.item.name }}</p>
-                    <p class="amount">{{ item.amount }}</p>
-                    {%  if item.amount < 1 %}
-                        <button type="button" class="minus-button-pizza" disabled="True">-</button>
-                    {% else %}
-                        <button type="button" class="minus-button-pizza">-</button>
-                    {% endif %}
-                    <button type="button" class="add-button-pizza">+</button>
-                    <button type="button" class="remove-button-pizza">Remove</button>
-                </div>
-            {% endfor %}
-            <br>
-            {% for item in orders.offers.all %}
-                <div class="offer-item-cart" id="{{ item.id }}">
-                    <p>{{ item.item.order.name }}</p>
-                    <p class="amount">{{ item.amount }}</p>
-                    {%  if item.amount < 1 %}
-                        <button type="button" class="minus-button-offer" disabled="True">-</button>
-                    {% else %}
-                        <button type="button" class="minus-button-offer">-</button>
-                    {% endif %}
-                    <button type="button" class="add-button-offer">+</button>
-                    <button type="button" class="remove-button-offer">Remove</button>
-                </div>
-            {% endfor %}
+    <div class="cart-container">
+        <div class="cart-summary">
+            <button type="button" class="clear-all-btn">Clear all</button>
+            <div class="cart-pizza">
+                {% for item in orders.pizzas.all %}
+                    <div class="cart-item" id="{{ item.id }}">
+                        <div class="title-img">
+                            <img src="{{item.item.images.all.0.image}}" alt="Delicious lookin pizza" id="review-img"/>
+                            <h4 id="review-pizza-name">{{ item.item.name }}</h4>
+                        </div>
+                        <div class="cart-item-total">
+                            <div class="cart-item-qty">
+                            {%  if item.amount < 1 %}
+                                <button type="button" class="minus-button-pizza" disabled="True">-</button>
+                            {% else %}
+                                <button type="button" class="minus-button-pizza">-</button>
+                            {% endif %}
+                            <p class="amount">{{ item.amount }}</p>
+                            <button type="button" class="add-button-pizza">+</button>
+                            </div>
+                            <div class="cart-item-price">
+                            <p>{{ item.item.price }} kr.</p>
+                            <button type="button" class="remove-button-pizza">X</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <br>
+                {% for item in orders.offers.all %}
+                    <div class="cart-item" id="{{ item.id }}">
+                        <div class="title-img">
+                            <img src="{{item.item.order.image}}" alt="Offer image" id="review-img"/>
+                            <h4 id="review-pizza-name">{{ item.item.order.name }}</h4>
+                        </div>
+                        <div class="cart-item-total">
+                            <div class="cart-item-qty">
+                                {%  if item.amount < 1 %}
+                                <button type="button" class="minus-button-offer" disabled="True">-</button>
+                                {% else %}
+                                <button type="button" class="minus-button-offer">-</button>
+                                {% endif %}
+                            <p class="amount">{{ item.amount }}</p>
+                            <button type="button" class="add-button-offer">+</button>
+                            </div>
+                            <div class="cart-item-price">
+                                <p>{{ item.item.order.price }} kr.</p>
+                                <button type="button" class="remove-button-offer">X</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <p class="price">TOTAL {{ orders.price }} kr</p>
+            {% if orders.price != 0 %}
+                <a href="{% url 'create_contact' %}"><button type="button" class="checkout">Checkout</button></a>
+            {% else %}
+                <a href="{% url 'create_contact' %}"><button type="button" class="checkout" disabled="True">Checkout</button></a>
+            {% endif %}
         </div>
-        <p class="price">Price: {{ orders.price }} kr</p>
-        {% if orders.price != 0 %}
-            <a href="{% url 'create_contact' %}"><button type="button" class="checkout">Checkout</button></a>
-        {% else %}
-            <a href="{% url 'create_contact' %}"><button type="button" class="checkout" disabled="True">Checkout</button></a>
-        {% endif %}
     </div>
 {% endblock %}
