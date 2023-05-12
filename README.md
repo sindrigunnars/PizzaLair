@@ -13,4 +13,3 @@ Some extra requirements we implemented are an auto logout when user is idle for 
 that includes information on our business.
 
 Github repository: https://github.com/sindrigunnars/verklegt-2
-Project walkthrough: 
