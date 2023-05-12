@@ -59,6 +59,8 @@ def add_menu_to_cart(request):
         for pizza in cart_order.pizzas.all():
             if int(pizza.item_id) == int(pizza_id):
                 pizza.amount += 1
+                cart_order.price += Pizza.objects.get(pk=pizza_id).price
+                cart_order.save()
                 pizza.save()
                 return redirect('menu-index')
         cart_order.pizzas.add(OrderPizza.objects.create(item=Pizza.objects.get(pk=pizza_id)))
