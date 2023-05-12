@@ -296,3 +296,9 @@ $(document).ready( function () {
         })
     })
 });
+
+const subMenu = document.getElementById("subMenu");
+
+const toggleMenu = () => {
+    subMenu.classList.toggle("open-menu");
+}

@@ -10,21 +10,49 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'offers-index' %}">Offers</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'menu-index' %}">Menu</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated and user.userprofile.image %}
-                    <img src="{{ user.userprofile.image }}" class="profile-image" alt="profile image">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Cart</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
-                {% elif user.is_authenticated and not user.userprofile.image %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Cart</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
-                {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> <!--after login displays screen name and img-->
-                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li> <!--after adding to cart displays 'Your Order' and nr. of items-->
-                {% endif %}
-            </ul>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated and user.userprofile.image %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Cart</a></li>
+                <img src="{{ user.userprofile.image }}" class="profile-img" alt="profile image" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="{{ user.userprofile.image }}" class="drop-img" alt="profile image">
+                            <h3 class="screen-name-drop">{{ user.userprofile.screen_name }}</h3>
+                        </div>
+                        <hr>
+                        <a href="{% url 'profile' %}" class="sub-menu-link">
+                            <p class="nav-item">Edit Profile</p>
+                        </a>
+                        <a href="{% url 'logout' %}" class="sub-menu-link">
+                            <p class="nav-item">Logout</p>
+                        </a>
+                    </div>
+                </div>
+            {% elif user.is_authenticated and not user.userprofile.image %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'cart-index' %}">Cart</a></li>
+                <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" class="profile-img" alt="pizza image" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" class="drop-img" alt="pizza image" onclick="toggleMenu()">
+                            <h3 class="screen-name-drop">{{ user.userprofile.screen_name }}</h3>
+                        </div>
+                        <hr>
+                        <a href="{% url 'profile' %}" class="sub-menu-link">
+                            <p class="nav-item">Edit Profile</p>
+                        </a>
+                        <a href="{% url 'logout' %}" class="sub-menu-link">
+                            <p class="nav-item">Logout</p>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+
     </div>
 </nav>
