@@ -551,7 +551,7 @@ input:focus, textarea:focus, select:focus{
     font-size: 2rem;
 }
 
-.remove-button-pizza {
+.remove-button-pizza, .remove-button-offer {
     font-size: larger;
     background-color: transparent;
     border: none;
@@ -567,10 +567,6 @@ input:focus, textarea:focus, select:focus{
 .add-button-offer {
     border: none;
     font-size: 2rem;
-}
-
-.remove-button-offer {
-    border: 1px solid #ccc;
 }
 
 .sort-by-select {
