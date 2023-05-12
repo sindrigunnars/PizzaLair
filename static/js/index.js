@@ -192,7 +192,7 @@ $(document).ready( function () {
     $('.remove-button-offer').on('click', function (e) {
         e.preventDefault();
         const remove_id = $(this).parent().parent().parent().attr('id');
-        let elem = $(this).parent();
+        let elem = $(this).parent().parent().parent();
         let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?remove-offer=' + remove_id,
