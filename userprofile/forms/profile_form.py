@@ -1,5 +1,4 @@
 from django.forms import ModelForm, widgets
-
 from userprofile.models import UserProfile
 
 

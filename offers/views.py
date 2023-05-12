@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from datetime import datetime, time
 from cart.models import Order, OrderOffer
@@ -82,4 +81,3 @@ def add_offer_to_cart(request):
             return redirect('login')
 
     return redirect('offers-index')
-
