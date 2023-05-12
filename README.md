@@ -3,7 +3,8 @@ handle pizza ordering and management of these orders, the basics of an online st
 
 For this project you need to set up a virtual environment and import the packages from
 the requirements.txt file included within the project directory. Then you need to run the
-statement 'python manage.py runserver 8000 --insecure' from the verklegt-2 directory.
+statement 'python manage.py runserver 8000 --insecure' from the verklegt-2 directory and
+open the link provided by django.
 
 NOTE: This project has debug mode off, although we did not make any error screens, our error where
 handled in a way that when users do something wrong the website redirects them away, f.x. when an 
@@ -13,4 +14,3 @@ Some extra requirements we implemented are an auto logout when user is idle for 
 that includes information on our business.
 
 Github repository: https://github.com/sindrigunnars/verklegt-2
-Project walkthrough: 
