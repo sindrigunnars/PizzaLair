@@ -1,6 +1,5 @@
 from cart.models import ContactInformation
 from django.forms import ModelForm, widgets
-from django import forms
 
 
 class ContactCreateForm(ModelForm):

@@ -1,9 +1,7 @@
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.decorators.cache import cache_control
-
+from django.shortcuts import render, redirect
 from cart.forms.payment_form import PaymentCreateForm
-from cart.models import Order, PaymentInformation
+from cart.models import Order
 from cart.forms.contact_form import ContactCreateForm
 from menu.models import Pizza
 

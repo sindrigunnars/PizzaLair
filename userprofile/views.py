@@ -1,6 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-
 from userprofile.forms.profile_form import ProfileForm
 from userprofile.models import UserProfile
 
