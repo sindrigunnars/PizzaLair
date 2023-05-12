@@ -32,7 +32,7 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('.add-button-pizza').on('click', function (e) {
         e.preventDefault();
-        const pizza_id = $(this).parent().attr('id');
+        const pizza_id = $(this).parent().parent().parent().attr('id');
         let elem = $(this).siblings('.amount');
         let minus_btn = $(this).siblings('.minus-button-pizza');
         let checkout_btn = $('.checkout');
@@ -62,7 +62,7 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('.minus-button-pizza').on('click', function (e) {
         e.preventDefault();
-        const pizza_id = $(this).parent().attr('id');
+        const pizza_id = $(this).parent().parent().parent().attr('id');
         let elem = $(this).siblings('.amount');
         let btn = $(this);
         let checkout_btn = $('.checkout');
@@ -91,7 +91,7 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('.add-button-offer').on('click', function (e) {
         e.preventDefault();
-        const pizza_id = $(this).parent().attr('id');
+        const pizza_id = $(this).parent().parent().parent().attr('id');
         let elem = $(this).siblings('.amount');
         let minus_btn = $(this).siblings('.minus-button-offer');
         let checkout_btn = $('.checkout');
@@ -120,7 +120,7 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('.minus-button-offer').on('click', function (e) {
         e.preventDefault();
-        const pizza_id = $(this).parent().attr('id');
+        const pizza_id = $(this).parent().parent().parent().attr('id');
         let elem = $(this).siblings('.amount');
         let btn = $(this);
         let checkout_btn = $('.checkout');
@@ -152,7 +152,7 @@ $(document).ready( function () {
             url: '/cart?clear-all',
             type: 'GET',
             success: function (resp) {
-                $('.pizza-cart').empty();
+                $('.cart-pizza').empty();
                 $('.checkout').prop('disabled', true);
                 $('.price').text(`Price: 0 kr`);
             },
@@ -166,8 +166,8 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('.remove-button-pizza').on('click', function (e) {
         e.preventDefault();
-        const remove_id = $(this).parent().attr('id');
-        let elem = $(this).parent();
+        const remove_id = $(this).parent().parent().parent().attr('id');
+        let elem = $(this).parent().parent().parent();
         let checkout_btn = $('.checkout');
         $.ajax({
             url: '/cart?remove-pizza=' + remove_id,
@@ -191,7 +191,7 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('.remove-button-offer').on('click', function (e) {
         e.preventDefault();
-        const remove_id = $(this).parent().attr('id');
+        const remove_id = $(this).parent().parent().parent().attr('id');
         let elem = $(this).parent();
         let checkout_btn = $('.checkout');
         $.ajax({
