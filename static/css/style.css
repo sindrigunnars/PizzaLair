@@ -62,12 +62,13 @@ header {
     display: block;
 }
 
-/* Offers */
+
 div#card {
     height: 500px;
     transform: translateY(-80px);
 }
 
+/* Offers */
 .offer {
     display: grid;
     justify-self: center;
@@ -208,21 +209,23 @@ div#card {
 
 .all-images {
     font-size: large;
-    background-color: aliceblue;
+    font-weight: bold;
 }
 
 .pizza-img-list {
     border: solid 2px rgba(0, 0, 0, .5);
     max-width: 75%;
-    /* height: auto; */
     height: fit-content;
+    width: 500px;
 }
 
 .images {
     margin-bottom: 100px;
     padding: 20px;
-    margin-left: 10px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: rgba(248, 249, 250, 0.74);
+
 }
 
 .pizza-img {
@@ -265,8 +268,8 @@ div#card {
 
 .offer-name-and-desc {
     position: absolute;
-    top: 20px; /* Adjust the top value as per your preference */
-    left: 100px; /* Adjust the left value as per your preference */
+    top: 20px;
+    left: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -494,28 +497,7 @@ input:focus, textarea:focus, select:focus{
 .price {
     font-weight: bold;
 }
-/*
-.pizza-cart {
-    position: relative;
-    display: flex;
-    height: auto;
-    flex-direction: row;
-    background-color: #f2f2f2;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-.pizza-item-cart {
-    font-weight: bold;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    width: 150px;
-    height: 200px;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-*/
 .offer-item-cart {
     font-weight: bold;
     background-color: #f2f2f2;
@@ -593,21 +575,17 @@ input:focus, textarea:focus, select:focus{
 
 .sort-by-select {
     padding: 8px 16px;
-    /*border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;*/
     cursor: pointer;
     opacity: 1;
-    border: 2px solid black;
+    border: 1.5px solid black;
     border-radius: 5px;
 }
 
 .filter-by-select {
     padding: 8px 16px;
-    /*border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;*/
     cursor: pointer;
     opacity: 1;
-    border: 2px solid black;
+    border: 1.5px solid black;
     border-radius: 5px;
 }
 
@@ -617,19 +595,14 @@ input:focus, textarea:focus, select:focus{
 }
 
 #search-btn {
-    background-color: aliceblue;
     color: black;
-    /* padding: 15px 32px; */
     text-align: center;
-    /* text-decoration: none; */
-    /* display: inline-block; */
-    /* font-size: 16px; */
-    border: 2px solid black;
+    border: 1.5px solid black;
     border-radius: 5px;
 }
 
 #search-box {
-    border: 2px solid black;
+    border: 1.5px solid black;
 }
 
 .search-bar-menu {
@@ -637,9 +610,6 @@ input:focus, textarea:focus, select:focus{
     flex-direction: row;
     gap: 20px;
     justify-content: center;
-    /* flex-wrap: wrap; */
-    /* align-content: stretch; */
-    /* align-items: center; */
     width: 100%;
 }
 
@@ -868,7 +838,7 @@ input:focus, textarea:focus, select:focus{
     text-align: center;
 }
 
-#confirm-order-btn:hover, .checkout:hover, .add-to-cart:hover {
+#confirm-order-btn:hover, .checkout:hover, .add-to-cart-btn:hover {
     background-color: #0d172a;
     color: #fff;
 }
@@ -936,11 +906,11 @@ input:focus, textarea:focus, select:focus{
 
 /*  Profile  */
 .profile-container {
-        display: flex;
-        color: #f8f9fa;
-        margin-top: 80px;
-        margin-left: 20%;
-        border-radius: 2%;
+    display: flex;
+    color: #f8f9fa;
+    margin-top: 80px;
+    margin-left: 20%;
+    border-radius: 2%;
 }
 
 .profile-form {
@@ -989,6 +959,7 @@ input#id_image.form-control {
     width: 300px;
     height: 40px;
 }
+
 /*  Confirmation page   */
 .confirm-msg {
     width: fit-content;
@@ -1028,13 +999,13 @@ input#id_image.form-control {
 
 .menu-btn:hover,
 .menu-btn:focus {
-  background-color: rgba(40, 36, 44, 0.77);
-  color: #ffffff;
+    background-color: rgba(40, 36, 44, 0.77);
+    color: #ffffff;
 }
 
 .menu-btn:active {
-  background: rgba(40, 36, 44, 0.89);
-  color: #ffffff;
+    background: rgba(40, 36, 44, 0.89);
+    color: #ffffff;
 }
 
 /*  Navbar DropDown  */
