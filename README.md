@@ -3,12 +3,11 @@ handle pizza ordering and management of these orders, the basics of an online st
 
 For this project you need to set up a virtual environment and import the packages from
 the requirements.txt file included within the project directory. Then you need to run the
-statement 'python manage.py runserver 8000' from the verklegt-2 directory.
+statement 'python manage.py runserver 8000 --insecure' from the verklegt-2 directory.
 
-NOTE: This project has debug mode on because the group did not configure any error screens
-because we preferred handling them with f.x. redirects when a user does something they should not,
-as well as because we could not configure the project so the static files can be read with debug
-mode off.
+NOTE: This project has debug mode off, although we did not make any error screens, our error where
+handled in a way that when users do something wrong the website redirects them away, f.x. when an 
+anonymous user tries to add to cart or view cart.
 
 Some extra requirements we implemented are an auto logout when user is idle for 10 minutes and a footer
 that includes information on our business.
