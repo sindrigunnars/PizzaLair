@@ -13,7 +13,7 @@ $(document).ready( function () {
                                     <h4>${d.name}</h4>
                                     <p>${d.price} kr</p>
                                     <a href="/menu/${d.id}">
-                                        <button>View details</button>
+                                        <button class="details-btn">View details</button>
                                     </a>
                                 </div>
                             </div>`
@@ -146,7 +146,7 @@ $(document).ready( function () {
 });
 
 $(document).ready( function () {
-    $('.clear-all').on('click', function (e) {
+    $('.clear-all-btn').on('click', function (e) {
         e.preventDefault();
         $.ajax({
             url: '/cart?clear-all',
@@ -228,7 +228,7 @@ $(document).ready( function () {
                                     <h4>${d.name}</h4>
                                     <p>${d.price} kr</p>
                                     <a href="/menu/${d.id}">
-                                        <button>View details</button>
+                                        <button class="details-btn">View details</button>
                                     </a>
                                 </div>
                             </div>`
@@ -252,7 +252,7 @@ $(document).ready( function () {
                                     <h4>${d.name}</h4>
                                     <p>${d.price} kr</p>
                                     <a href="/menu/${d.id}">
-                                        <button>View details</button>
+                                        <button class="details-btn">View details</button>
                                     </a>
                                 </div>
                             </div>`
