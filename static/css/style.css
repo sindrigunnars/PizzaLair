@@ -2,12 +2,16 @@
     width: 35rem;
     height: 20rem;
     margin-top: 75px;
-    background-color: rosybrown;
+    background-color: #28242c;
+    color: #f8f9fa;
+    font-size: 3em;
+    font-weight: 600;
     border: solid 2px rgba(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+
 }
 .content{
     display: flex;
@@ -17,14 +21,37 @@
     margin-top: 50px;
     margin-bottom: 100px;
 }
-.square h1{
-    font-size: 3em;
-}
 
 .pizza{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.details-btn {
+    background-color: #eff0f1;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    line-height: 27px;
+    width: 150px;
+    padding: 0 16px;
+    text-align: center;
+    white-space: pre;
+}
+
+.details-btn:hover {
+    border-color: #dadce0;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+    color: #202124;
+}
+
+.details-btn:focus {
+    border-color: #4285f4;
+    outline: 0!important;
 }
 
 .background-image {
@@ -82,8 +109,11 @@ div#card {
     display: inline-block;
     margin: 30px;
     text-align: center;
-    background-color: white;
     padding: 20px;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    background-color: #f8f9fa;
 }
 
 .offer img {
@@ -106,8 +136,11 @@ div#card {
     display: inline-block;
     margin: 30px;
     text-align: center;
-    background-color: white;
     padding: 20px;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    background-color: #f8f9fa;
 }
 
 .pizza-item img {
@@ -133,10 +166,13 @@ div#card {
     align-items: center;
     margin: 100px auto;
     text-align: center;
-    background-color: white;
     padding: 20px;
     width: 800px;
     height: 400px;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    background-color: #f8f9fa;
 }
 
 .back-button {
@@ -161,6 +197,12 @@ div#card {
     display: block;
     margin-top: 20px;
 }
+
+.lunch-offer-btn:disabled {
+    opacity: 0.5;
+    --button-hover-bg: none;
+}
+
 
 .all-images {
     font-size: large;
@@ -210,10 +252,13 @@ div#card {
     align-items: center;
     margin: 100px auto;
     text-align: center;
-    background-color: white;
     padding: 20px;
     width: 800px;
     height: 400px;
+    border: #E2E8F0 solid thin;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    background-color: #f8f9fa;
 }
 
 .offer-name-and-desc {
@@ -442,8 +487,36 @@ input:focus, textarea:focus, select:focus{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.clear-all {
-    margin-bottom: 20px;
+.clear-all-btn {
+    background-color: #0d172a;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 20px  0 20px 900px;
+    max-width: fit-content;
+    min-height: 44px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.clear-all-btn:hover,
+.clear-all-btn:focus {
+    opacity: .75;
+    background-color: #fff;
+    border: 1.5px solid #0d172a;
+    color: #0d172a;
 }
 
 .checkout {
@@ -735,24 +808,24 @@ input:focus, textarea:focus, select:focus{
     padding-right: 20px;
 }
 
-#confirm-order-btn {
-  background-color: #fff;
-  border: 1px solid #28242c;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: #0d172a;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1;
-  padding: 1rem 1.6rem;
-  text-align: center;
+#confirm-order-btn, .checkout, .add-to-cart-btn {
+    background-color: #fff;
+    border: 1px solid #0d172a;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
 }
 
-#confirm-order-btn:hover {
-  background-color: #28242c;
-  color: #f8f9fa;
+#confirm-order-btn:hover, .checkout:hover, .add-to-cart:hover {
+    background-color: #0d172a;
+    color: #fff;
 }
 
 /*      Payment CSS     */

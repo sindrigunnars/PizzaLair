@@ -11,11 +11,11 @@
                         <p>{{ offer.description }}</p>
                         {% if not active and offer.name == 'Lunch offer' %}
                             <a href="/offers/{{ offer.id }}/">
-                                <button disabled="True">Add to cart</button>
+                                <button class="details-btn lunch-offer-btn" disabled="True">Details</button>
                             </a>
                         {% else %}
                             <a href="/offers/{{ offer.id }}/">
-                                <button>Add to cart</button>
+                                <button class="details-btn">Details</button>
                             </a>
                         {% endif %}
                     </div>

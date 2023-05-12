@@ -2,7 +2,7 @@
 {% block title %}Cart{% endblock %}
 {% block content %}
     <div class="content-cart">
-        <button type="button" class="clear-all">Clear all</button>
+        <button type="button" class="clear-all-btn">Clear all</button>
         <div class="pizza-cart">
             {% for item in orders.pizzas.all %}
                 <div class="pizza-item-cart" id="{{ item.id }}">

@@ -5,6 +5,6 @@
     <p>{{ offer.description }}</p>
     <p>{{ offer.price }} kr</p>
     {% for offer_image in offer.images.all.0.image %}
-        <img src="{{ offer.images.all.0.image }}" class="offer-img">
+        <img src="{{ offer.images.all.0.image }}" class="offer-img" alt="Offer image">
     {% endfor %}
 {% endblock %}
