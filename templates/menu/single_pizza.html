@@ -14,7 +14,7 @@
             <form action="{% url 'add_menu_to_cart' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" id="custId" name="pizzaId" value="{{ pizza.id }}">
-                <input type="submit" value="Add to cart"/>
+                <input class="add-to-cart-btn" type="submit" value="Add to cart"/>
             </form>
         </div>
     </div>
